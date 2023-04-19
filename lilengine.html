@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html><head>  
+  
+  <title>ZBZ's Lil' Engine</title>
+  
+</head>
+<body>
+
+<section class="Title">
+    <h1>ZBZ's Lil' Engine</h1>
+    <h3>by Team ZBZ (Zhijian Wang, Bitan Wu, Zane Walter)</h3>
+</section>
+
+<section class="Video">
+    <h2>Demo Video</h2>
+    <iframe width="560" height="278" src="https://www.youtube.com/embed/82L_1D-lDIg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+
+<section class="Screenshots">
+    <h2>Screenshots</h2>
+    <img src="screenshot1.png" style="display:inline-block;">
+    <img src="screenshot2.png" style="display:inline-block;">
+    <img src="screenshot3.png" style="display:inline-block;">
+</section>
+
+<section class="Documentation">
+    <h2>Documentation</h2>
+    <p>The engine documentation can be found here: <a href="https://zanewal.github.io/EnginesSpr23Website/Docs/html/index.html">Engine Documentation Index</a></p>
+</section>
+
+<section class="Download">
+    <h2>Downloads</h2>
+    <p>Download the engine here: <a href="https://github.com/Spring23BuildingGameEngines/finalproject-zhijian-bitan-zane/tree/master/Engine">Engine Download</a></p>
+</section>
+
+<section class="Architecture">
+    <h2>Game Engine Architecture Diagram</h2>
+    <img src="architecture_diagram.png" height="500" width="800">
+    <p><a href="architecture_diagram.png">View full size</a></p>
+</section>
+
+<section class="Postmortem">
+    <h2>Postmortem</h2>
+    <p>This project appears very simple and limited, but the groundwork for extensibility is laid. Our engine, particularly the saving and loading JSON feature, is very data-oriented. The engine can be played without the editor by calling the play function with a game's JSON file. We were able to include a variety of design patterns as well, such as the singleton pattern with our resource manager and the factory pattern with our component factory.</p>
+    <p>If we had more time to work on this engine, there are a lot of improvements we could make. More built-in components would allow for more easy functionality in the editor, and are pretty easy to implement. The best component to add would be some sort of generic script component, that allows Python scripts to be attached to GameObjects, rather than implementing Python scripting on the entire engine. The TileMap component could also be improved to work better and work in our editor. The editor could also have the game view, editor menu, and GameObject configuration all in one window with more time. It would also be good to put time into proper scene switching, for more complete games.</p>
+    <p>It would likely be a lower priority since our engine is too small for major performance issues right now, but there are a lot of places to improve the engine's efficiency. For example, there are a number of inefficient calls to GetComponentOfType, and several Component Update calls that could be reworked to not be called every update tick.</p>
+</section>
+
+</body></html>
