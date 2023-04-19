@@ -1,0 +1,120 @@
+\hypertarget{classIGraphicsEngineRenderer}{}\doxysection{IGraphics\+Engine\+Renderer Class Reference}
+\label{classIGraphicsEngineRenderer}\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+
+
+{\ttfamily \#include $<$IGraphics\+Engine\+Renderer.\+hpp$>$}
+
+Inheritance diagram for IGraphics\+Engine\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classIGraphicsEngineRenderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIGraphicsEngineRenderer_a54ff623ea2317c506ade9be1fc1a53e6}{IGraphics\+Engine\+Renderer}} ()
+\item 
+virtual \mbox{\hyperlink{classIGraphicsEngineRenderer_a1b5219e8b718d38b4e54be31557eee17}{$\sim$\+IGraphics\+Engine\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}{Set\+Render\+Draw\+Color}} (int r, int g, int b, int a)=0
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}{Render\+Clear}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}{Render\+Present}} ()=0
+\item 
+virtual int \mbox{\hyperlink{classIGraphicsEngineRenderer_a8da661ff2c958a1851d56acf4b60f45d}{Get\+Window\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Get the Window Width. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classIGraphicsEngineRenderer_a7883fa84b4aef306d9cda2bc3db173d6}{Get\+Window\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Get the Window Height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a5fc1eeeea4c45bac9a30b04380200632}\label{classIGraphicsEngineRenderer_a5fc1eeeea4c45bac9a30b04380200632}} 
+int {\bfseries m\+Screen\+Width} \{0\}
+\item 
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a53ad0e9c3338aeb89ec73dda3b7f9a3d}\label{classIGraphicsEngineRenderer_a53ad0e9c3338aeb89ec73dda3b7f9a3d}} 
+int {\bfseries m\+Screen\+Height} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class serves as an interface to the main graphics renderer for our engine. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a54ff623ea2317c506ade9be1fc1a53e6}\label{classIGraphicsEngineRenderer_a54ff623ea2317c506ade9be1fc1a53e6}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{IGraphicsEngineRenderer()}{IGraphicsEngineRenderer()}}
+{\footnotesize\ttfamily IGraphics\+Engine\+Renderer\+::\+IGraphics\+Engine\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor \mbox{\Hypertarget{classIGraphicsEngineRenderer_a1b5219e8b718d38b4e54be31557eee17}\label{classIGraphicsEngineRenderer_a1b5219e8b718d38b4e54be31557eee17}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!````~IGraphicsEngineRenderer@{$\sim$IGraphicsEngineRenderer}}
+\index{````~IGraphicsEngineRenderer@{$\sim$IGraphicsEngineRenderer}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$IGraphicsEngineRenderer()}{~IGraphicsEngineRenderer()}}
+{\footnotesize\ttfamily virtual IGraphics\+Engine\+Renderer\+::$\sim$\+IGraphics\+Engine\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a7883fa84b4aef306d9cda2bc3db173d6}\label{classIGraphicsEngineRenderer_a7883fa84b4aef306d9cda2bc3db173d6}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!GetWindowHeight@{GetWindowHeight}}
+\index{GetWindowHeight@{GetWindowHeight}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{GetWindowHeight()}{GetWindowHeight()}}
+{\footnotesize\ttfamily virtual int IGraphics\+Engine\+Renderer\+::\+Get\+Window\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Window Height. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a8da661ff2c958a1851d56acf4b60f45d}\label{classIGraphicsEngineRenderer_a8da661ff2c958a1851d56acf4b60f45d}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!GetWindowWidth@{GetWindowWidth}}
+\index{GetWindowWidth@{GetWindowWidth}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{GetWindowWidth()}{GetWindowWidth()}}
+{\footnotesize\ttfamily virtual int IGraphics\+Engine\+Renderer\+::\+Get\+Window\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Window Width. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}\label{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!RenderClear@{RenderClear}}
+\index{RenderClear@{RenderClear}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderClear()}{RenderClear()}}
+{\footnotesize\ttfamily virtual void IGraphics\+Engine\+Renderer\+::\+Render\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Clear the screen 
+
+Implemented in \mbox{\hyperlink{classSDLGraphicsEngineRenderer_ae6edfc67a39076c0c12101ad85be4f6a}{SDLGraphics\+Engine\+Renderer}}.
+
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}\label{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!RenderPresent@{RenderPresent}}
+\index{RenderPresent@{RenderPresent}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderPresent()}{RenderPresent()}}
+{\footnotesize\ttfamily virtual void IGraphics\+Engine\+Renderer\+::\+Render\+Present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Render whatever is in the backbuffer to the screen. 
+
+Implemented in \mbox{\hyperlink{classSDLGraphicsEngineRenderer_acddd7c456e4311d71fc1d43f29343d81}{SDLGraphics\+Engine\+Renderer}}.
+
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}\label{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}} 
+\index{IGraphicsEngineRenderer@{IGraphicsEngineRenderer}!SetRenderDrawColor@{SetRenderDrawColor}}
+\index{SetRenderDrawColor@{SetRenderDrawColor}!IGraphicsEngineRenderer@{IGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRenderDrawColor()}{SetRenderDrawColor()}}
+{\footnotesize\ttfamily virtual void IGraphics\+Engine\+Renderer\+::\+Set\+Render\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Set the color for the background whenever the color is cleared. 
+
+Implemented in \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a91b29bf19986c6ad8710238778312277}{SDLGraphics\+Engine\+Renderer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IGraphics\+Engine\+Renderer.\+hpp\end{DoxyCompactItemize}

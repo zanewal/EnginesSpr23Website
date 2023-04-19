@@ -1,0 +1,41 @@
+\hypertarget{PointComponent_8hpp_source}{}\doxysection{Point\+Component.\+hpp}
+\label{PointComponent_8hpp_source}\index{include/Components/PointComponent.hpp@{include/Components/PointComponent.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POINTCOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POINTCOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPointComponent}{PointComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{classPointComponent}{PointComponent}}();}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{classPointComponent}{PointComponent}}(json\ j);}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ json\ \mbox{\hyperlink{classPointComponent_a34bdbe9abb3fc19704602ced75463795}{ToJson}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPointComponent_ac7678f3c703e49cb4016e433d317bcc4}{Render}}(SDL\_Renderer\ *ren)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPointComponent_adb3f471a659947b44a41b79bc129f0ee}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPointComponent_afac3fb75d0af9e97e373931815ac82f3}{Update}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{object},\ \mbox{\hyperlink{classScene}{Scene}}\ *scene,\ \textcolor{keywordtype}{int}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ LosePoint(\textcolor{keywordtype}{int}\ point);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ GainPoint(\textcolor{keywordtype}{int}\ point);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ position;}
+\DoxyCodeLine{00036\ \ \ \ \ TTF\_Font\ *font;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classEngine}{Engine}}\ *gameEngine;}
+\DoxyCodeLine{00038\ \ \ \ \ SDL\_Renderer\ *renderer;}
+\DoxyCodeLine{00039\ \ \ \ \ SDL\_Surface\ *surface\{\};}
+\DoxyCodeLine{00040\ \ \ \ \ SDL\_Texture\ *texture\{\};}
+\DoxyCodeLine{00041\ \ \ \ \ SDL\_Rect\ rect\{\};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

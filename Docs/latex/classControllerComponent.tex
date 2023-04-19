@@ -1,0 +1,149 @@
+\hypertarget{classControllerComponent}{}\doxysection{Controller\+Component Class Reference}
+\label{classControllerComponent}\index{ControllerComponent@{ControllerComponent}}
+
+
+{\ttfamily \#include $<$Controller\+Component.\+hpp$>$}
+
+Inheritance diagram for Controller\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classControllerComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classControllerComponent_a35d8c1e90ac58d97e2f0d1e6121cbf32}{Controller\+Component}} ()
+\item 
+\mbox{\hyperlink{classControllerComponent_afe95d7abd30e5f6df3257db71659eb1a}{Controller\+Component}} (json j)
+\item 
+json \mbox{\hyperlink{classControllerComponent_ad0468ed9314e4ca2b29c4c1315b65a75}{To\+Json}} ()
+\item 
+virtual void \mbox{\hyperlink{classControllerComponent_aa8535564c3d6413cc8a425964a60b9e7}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine) override
+\item 
+virtual void \mbox{\hyperlink{classControllerComponent_a545c8680f1fe49a6bd6bea40b91e15b6}{Process\+Input}} (SDL\+\_\+\+Event $\ast$s) override
+\item 
+virtual void \mbox{\hyperlink{classControllerComponent_a8778c495f9c7fe64f2fa6a5498202531}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time) override
+\item 
+void \mbox{\hyperlink{classControllerComponent_ae1d99d086dde89bd39e463ff08340bb8}{Move}} (\mbox{\hyperlink{structVec2D}{Vec2D}} direction, \mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene)
+\begin{DoxyCompactList}\small\item\em move the object to with a direction only check collider if the parent object has a collider component \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classControllerComponent}{Controller\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} that move the character using WASD. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classControllerComponent_a35d8c1e90ac58d97e2f0d1e6121cbf32}\label{classControllerComponent_a35d8c1e90ac58d97e2f0d1e6121cbf32}} 
+\index{ControllerComponent@{ControllerComponent}!ControllerComponent@{ControllerComponent}}
+\index{ControllerComponent@{ControllerComponent}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{ControllerComponent()}{ControllerComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Controller\+Component\+::\+Controller\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classControllerComponent}{Controller\+Component}} Concentrator \mbox{\Hypertarget{classControllerComponent_afe95d7abd30e5f6df3257db71659eb1a}\label{classControllerComponent_afe95d7abd30e5f6df3257db71659eb1a}} 
+\index{ControllerComponent@{ControllerComponent}!ControllerComponent@{ControllerComponent}}
+\index{ControllerComponent@{ControllerComponent}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{ControllerComponent()}{ControllerComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Controller\+Component\+::\+Controller\+Component (\begin{DoxyParamCaption}\item[{json}]{j }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classControllerComponent}{Controller\+Component}} Concentrator(\+Overloading) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classControllerComponent_ae1d99d086dde89bd39e463ff08340bb8}\label{classControllerComponent_ae1d99d086dde89bd39e463ff08340bb8}} 
+\index{ControllerComponent@{ControllerComponent}!Move@{Move}}
+\index{Move@{Move}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Controller\+Component\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{direction,  }\item[{\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$}]{object,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+move the object to with a direction only check collider if the parent object has a collider component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & a vec2d \\
+\hline
+{\em object} & the parent game object \\
+\hline
+{\em scene} & the scene \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classControllerComponent_a545c8680f1fe49a6bd6bea40b91e15b6}\label{classControllerComponent_a545c8680f1fe49a6bd6bea40b91e15b6}} 
+\index{ControllerComponent@{ControllerComponent}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily virtual void Controller\+Component\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handle user input to move the game object 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Component}}.
+
+\mbox{\Hypertarget{classControllerComponent_aa8535564c3d6413cc8a425964a60b9e7}\label{classControllerComponent_aa8535564c3d6413cc8a425964a60b9e7}} 
+\index{ControllerComponent@{ControllerComponent}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily virtual void Controller\+Component\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Load element into memory 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Component}}.
+
+\mbox{\Hypertarget{classControllerComponent_ad0468ed9314e4ca2b29c4c1315b65a75}\label{classControllerComponent_ad0468ed9314e4ca2b29c4c1315b65a75}} 
+\index{ControllerComponent@{ControllerComponent}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Controller\+Component\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Convert to Json 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{Component}}.
+
+\mbox{\Hypertarget{classControllerComponent_a8778c495f9c7fe64f2fa6a5498202531}\label{classControllerComponent_a8778c495f9c7fe64f2fa6a5498202531}} 
+\index{ControllerComponent@{ControllerComponent}!Update@{Update}}
+\index{Update@{Update}!ControllerComponent@{ControllerComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Controller\+Component\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{object,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene,  }\item[{int}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Change the position of object 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Controller\+Component.\+hpp\end{DoxyCompactItemize}

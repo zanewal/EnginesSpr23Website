@@ -1,0 +1,63 @@
+\hypertarget{classResourceManager}{}\doxysection{Resource\+Manager Class Reference}
+\label{classResourceManager}\index{ResourceManager@{ResourceManager}}
+
+
+{\ttfamily \#include $<$Resource\+Manager.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classResourceManager_a6f0d8d5028f71bc4c41b5adce123d69b}{Load\+Texture}} (std\+::string filepath)
+\item 
+SDL\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classResourceManager_a57f94cc53ac2125732b9833e449a3174}{Get\+Texture}} (std\+::string filepath)
+\item 
+SDL\+\_\+\+Surface $\ast$ \mbox{\hyperlink{classResourceManager_ac53711b8fb0715418eb4796c379eb2dd}{Get\+Texture}} (std\+::string filepath, bool should\+Load)
+\item 
+void \mbox{\hyperlink{classResourceManager_af452453ab6026e5b251a39f642260b05}{Destroy\+All}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& \mbox{\hyperlink{classResourceManager_ad4dd8ab7ad458929de4a60128079af98}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages loading of textures. Should be used a singleton class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classResourceManager_af452453ab6026e5b251a39f642260b05}\label{classResourceManager_af452453ab6026e5b251a39f642260b05}} 
+\index{ResourceManager@{ResourceManager}!DestroyAll@{DestroyAll}}
+\index{DestroyAll@{DestroyAll}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{DestroyAll()}{DestroyAll()}}
+{\footnotesize\ttfamily void Resource\+Manager\+::\+Destroy\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Free all loaded resources \mbox{\Hypertarget{classResourceManager_ad4dd8ab7ad458929de4a60128079af98}\label{classResourceManager_ad4dd8ab7ad458929de4a60128079af98}} 
+\index{ResourceManager@{ResourceManager}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classResourceManager}{Resource\+Manager}} \& Resource\+Manager\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the singleton instance of the \mbox{\hyperlink{classResourceManager}{Resource\+Manager}} \mbox{\Hypertarget{classResourceManager_a57f94cc53ac2125732b9833e449a3174}\label{classResourceManager_a57f94cc53ac2125732b9833e449a3174}} 
+\index{ResourceManager@{ResourceManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily SDL\+\_\+\+Surface $\ast$ Resource\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
+
+Fetches a loaded texture, loading it first if it has not yet been loaded. \mbox{\Hypertarget{classResourceManager_ac53711b8fb0715418eb4796c379eb2dd}\label{classResourceManager_ac53711b8fb0715418eb4796c379eb2dd}} 
+\index{ResourceManager@{ResourceManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily SDL\+\_\+\+Surface $\ast$ Resource\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath,  }\item[{bool}]{should\+Load }\end{DoxyParamCaption})}
+
+Fetches a loaded texture. If should\+Load is true, the file willl be loaded if it has not yet been. If should\+Load is false and the texture has not been loaded, nullptr will be returned. \mbox{\Hypertarget{classResourceManager_a6f0d8d5028f71bc4c41b5adce123d69b}\label{classResourceManager_a6f0d8d5028f71bc4c41b5adce123d69b}} 
+\index{ResourceManager@{ResourceManager}!LoadTexture@{LoadTexture}}
+\index{LoadTexture@{LoadTexture}!ResourceManager@{ResourceManager}}
+\doxysubsubsection{\texorpdfstring{LoadTexture()}{LoadTexture()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Surface $\ast$ Resource\+Manager\+::\+Load\+Texture (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
+
+Load a texture 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Resource\+Manager.\+hpp\end{DoxyCompactItemize}

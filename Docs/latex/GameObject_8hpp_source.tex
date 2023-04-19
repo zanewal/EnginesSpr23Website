@@ -1,0 +1,71 @@
+\hypertarget{GameObject_8hpp_source}{}\doxysection{Game\+Object.\+hpp}
+\label{GameObject_8hpp_source}\index{include/GameObject.hpp@{include/GameObject.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEOBJECT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEOBJECT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ defined(LINUX)\ ||\ defined(MINGW)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScene}{Scene}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComponent}{Component}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEngine}{Engine}};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameObject}{GameObject}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classGameObject_a0737657696b478c7962c2a6c2f5b1bd8}{GameObject}}(std::string\ name);}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{classGameObject_a83dd64c73b91625e9137c8dd82531b86}{GameObject}}(json\ j);}
+\DoxyCodeLine{00042\ \ \ \ \ json\ \mbox{\hyperlink{classGameObject_a2834829a99a6875f0371458943ccc5a5}{ToJson}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}{\string~GameObject}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_a49b2d3217a9ea81afa25e7d9a9ad2232}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_ac1f32e116be7bff9d7933963b8856601}{Shutdown}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_ad9e42b758c46cdd158be2bbb059bf04d}{ProcessInput}}(SDL\_Event\ *s);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_afa1e9aefd8a3cf032ecc89ecb96cc8cb}{Update}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{object},\ \mbox{\hyperlink{classScene}{Scene}}\ *scene,\ \textcolor{keywordtype}{int}\ deltaTime);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_a4018df48b4df0fc4b1db520fcad1ba6c}{Render}}(SDL\_Renderer\ *ren);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGameObject_a193b4d9c7eeea92c70b2cd4dc74e7342}{AddComponent}}(\mbox{\hyperlink{classComponent}{Component}}\ *component);}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{classComponent}{Component}}\ *\mbox{\hyperlink{classGameObject_a60581e860af5e423321f30da8d011413}{GetComponent}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00102\ \ \ \ \ T\ *\mbox{\hyperlink{classGameObject_afd12a3bc0d445e45145f5e8f064da024}{GetComponentOfType}}()}
+\DoxyCodeLine{00103\ \ \ \ \ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ component\ :\ components)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ T\ *derived\ =\ \textcolor{keyword}{dynamic\_cast<}T\ *\textcolor{keyword}{>}(component);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (derived\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ derived;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_aa5f99076c586054cf4eb2b39bb1e2a6c}{RemoveComponent}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_a65b8a1dc71ad442e9b530014c1b72a55}{RemoveAllComponents}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_af12ae9074c969daf5ccb0d8baaea3793}{SetParent}}(\mbox{\hyperlink{classScene}{Scene}}\ *newParent);}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{classScene}{Scene}}\ *\mbox{\hyperlink{classGameObject_afed61bbef4fedfcf20d874cd38c3a2f4}{GetParent}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameObject_a5cbd59eb3fd5c0a0600e1879d60236a4}{SetName}}(std::string\ name);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::string\ \mbox{\hyperlink{classGameObject_a74ce03d596c95cf6ebb8105c02260e7f}{GetName}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classGameObject_a87a5f098b5d2b2b5d832305390b69b45}{GetComponentCount}}();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ \ \ std::vector<Component\ *>\ components;}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{classScene}{Scene}}\ *parent;}
+\DoxyCodeLine{00161\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

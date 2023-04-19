@@ -1,0 +1,216 @@
+\hypertarget{classColliderComponent}{}\doxysection{Collider\+Component Class Reference}
+\label{classColliderComponent}\index{ColliderComponent@{ColliderComponent}}
+
+
+A \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} for collision detection. Only objects with \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} will detect collision with each other.  
+
+
+
+
+{\ttfamily \#include $<$Collider\+Component.\+hpp$>$}
+
+Inheritance diagram for Collider\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classColliderComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classColliderComponent_a80c8a9dc23db41d084f11a362048c9ae}\label{classColliderComponent_a80c8a9dc23db41d084f11a362048c9ae}} 
+typedef std\+::function$<$ void(\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$, \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$)$>$ {\bfseries Collision\+Event}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColliderComponent_a881902a4586b64d363793a028339d1b7}{Collider\+Component}} ()
+\item 
+\mbox{\hyperlink{classColliderComponent_a53fcb895f0fc47566de1348264f32a4c}{Collider\+Component}} (float aa, float bb)
+\item 
+\mbox{\hyperlink{classColliderComponent_a9d42b9ad8770ab829a05907134b7cbd2}{Collider\+Component}} (json j)
+\item 
+virtual json \mbox{\hyperlink{classColliderComponent_a4f881bc553cf3748cdad25e3a0b1f3be}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classColliderComponent_a39b9eac166f15b56e156cf03c7abe98d}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\item 
+void \mbox{\hyperlink{classColliderComponent_a472650a61f0ff6cbfd43476a85fee898}{Move}} (\mbox{\hyperlink{structVec2D}{Vec2D}} dst, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene)
+\item 
+\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$ \mbox{\hyperlink{classColliderComponent_a8b060803e2f39a43d9e853184001769e}{Check\+Collision}} (\mbox{\hyperlink{structVec2D}{Vec2D}} dst, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene)
+\item 
+\mbox{\hyperlink{structVec2D}{Vec2D}} \mbox{\hyperlink{classColliderComponent_a57afa35ae50b3daf8978b117c1ead767}{Get\+Penetration}} (\mbox{\hyperlink{structVec2D}{Vec2D}} dst, \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$other)
+\item 
+\mbox{\hyperlink{structVec2D}{Vec2D}} \mbox{\hyperlink{classColliderComponent_a1b07caefe7bba710bbb870a98e7adc81}{Get\+Collision\+Box}} ()
+\item 
+\mbox{\hyperlink{structVec2D}{Vec2D}} \mbox{\hyperlink{classColliderComponent_a14dd11fd158e8c58dd5a4eb3c7d46cdc}{Get\+Position}} ()
+\item 
+void \mbox{\hyperlink{classColliderComponent_add1a0b9775e2cef7b8a5ee4a92a36464}{Set\+Collision\+Box}} (\mbox{\hyperlink{structVec2D}{Vec2D}} new\+Box)
+\item 
+void \mbox{\hyperlink{classColliderComponent_a86b7feb57493e2960c835b3a935f94b7}{Stop\+Collision}} ()
+\begin{DoxyCompactList}\small\item\em Reset the collision on this object. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$ $>$ \mbox{\hyperlink{classColliderComponent_a0c88f9ce2365243d63b22536ebdf7d2a}{Get\+Collided\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Whether this collider is colliding with another object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classColliderComponent_ac0db93e61a4f81ec0c59f7515021408d}{Overlap}} (\mbox{\hyperlink{structVec2D}{Vec2D}} pos, \mbox{\hyperlink{structVec2D}{Vec2D}} aabb, \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$other)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} for collision detection. Only objects with \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} will detect collision with each other. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classColliderComponent_a881902a4586b64d363793a028339d1b7}\label{classColliderComponent_a881902a4586b64d363793a028339d1b7}} 
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{ColliderComponent()}{ColliderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Collider\+Component\+::\+Collider\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} Concentrator \mbox{\Hypertarget{classColliderComponent_a53fcb895f0fc47566de1348264f32a4c}\label{classColliderComponent_a53fcb895f0fc47566de1348264f32a4c}} 
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{ColliderComponent()}{ColliderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Collider\+Component\+::\+Collider\+Component (\begin{DoxyParamCaption}\item[{float}]{aa,  }\item[{float}]{bb }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} Concentrator(\+Overloading) \mbox{\Hypertarget{classColliderComponent_a9d42b9ad8770ab829a05907134b7cbd2}\label{classColliderComponent_a9d42b9ad8770ab829a05907134b7cbd2}} 
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\index{ColliderComponent@{ColliderComponent}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{ColliderComponent()}{ColliderComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Collider\+Component\+::\+Collider\+Component (\begin{DoxyParamCaption}\item[{json}]{j }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} Concentrator(\+Overloading) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classColliderComponent_a8b060803e2f39a43d9e853184001769e}\label{classColliderComponent_a8b060803e2f39a43d9e853184001769e}} 
+\index{ColliderComponent@{ColliderComponent}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$ Collider\+Component\+::\+Check\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{dst,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Check collision with the first object collide in the scene \mbox{\Hypertarget{classColliderComponent_a0c88f9ce2365243d63b22536ebdf7d2a}\label{classColliderComponent_a0c88f9ce2365243d63b22536ebdf7d2a}} 
+\index{ColliderComponent@{ColliderComponent}!GetCollidedObjects@{GetCollidedObjects}}
+\index{GetCollidedObjects@{GetCollidedObjects}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{GetCollidedObjects()}{GetCollidedObjects()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$ $>$ Collider\+Component\+::\+Get\+Collided\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Whether this collider is colliding with another object. 
+
+\begin{DoxyReturn}{Returns}
+the other colliders, empty if it is not colliding 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classColliderComponent_a1b07caefe7bba710bbb870a98e7adc81}\label{classColliderComponent_a1b07caefe7bba710bbb870a98e7adc81}} 
+\index{ColliderComponent@{ColliderComponent}!GetCollisionBox@{GetCollisionBox}}
+\index{GetCollisionBox@{GetCollisionBox}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{GetCollisionBox()}{GetCollisionBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVec2D}{Vec2D}} Collider\+Component\+::\+Get\+Collision\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the collision box \mbox{\Hypertarget{classColliderComponent_a57afa35ae50b3daf8978b117c1ead767}\label{classColliderComponent_a57afa35ae50b3daf8978b117c1ead767}} 
+\index{ColliderComponent@{ColliderComponent}!GetPenetration@{GetPenetration}}
+\index{GetPenetration@{GetPenetration}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{GetPenetration()}{GetPenetration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVec2D}{Vec2D}} Collider\+Component\+::\+Get\+Penetration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{dst,  }\item[{\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$}]{other }\end{DoxyParamCaption})}
+
+Get the penetration assuming two object is colliding Return the penetration if collide \mbox{\Hypertarget{classColliderComponent_a14dd11fd158e8c58dd5a4eb3c7d46cdc}\label{classColliderComponent_a14dd11fd158e8c58dd5a4eb3c7d46cdc}} 
+\index{ColliderComponent@{ColliderComponent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVec2D}{Vec2D}} Collider\+Component\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the position \mbox{\Hypertarget{classColliderComponent_a472650a61f0ff6cbfd43476a85fee898}\label{classColliderComponent_a472650a61f0ff6cbfd43476a85fee898}} 
+\index{ColliderComponent@{ColliderComponent}!Move@{Move}}
+\index{Move@{Move}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Collider\+Component\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{dst,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene }\end{DoxyParamCaption})}
+
+Move with collision detection Try move to the target position \mbox{\Hypertarget{classColliderComponent_ac0db93e61a4f81ec0c59f7515021408d}\label{classColliderComponent_ac0db93e61a4f81ec0c59f7515021408d}} 
+\index{ColliderComponent@{ColliderComponent}!Overlap@{Overlap}}
+\index{Overlap@{Overlap}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{Overlap()}{Overlap()}}
+{\footnotesize\ttfamily static bool Collider\+Component\+::\+Overlap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{pos,  }\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{aabb,  }\item[{\mbox{\hyperlink{classColliderComponent}{Collider\+Component}} $\ast$}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Check whether the transform overlap with another object \mbox{\Hypertarget{classColliderComponent_add1a0b9775e2cef7b8a5ee4a92a36464}\label{classColliderComponent_add1a0b9775e2cef7b8a5ee4a92a36464}} 
+\index{ColliderComponent@{ColliderComponent}!SetCollisionBox@{SetCollisionBox}}
+\index{SetCollisionBox@{SetCollisionBox}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{SetCollisionBox()}{SetCollisionBox()}}
+{\footnotesize\ttfamily void Collider\+Component\+::\+Set\+Collision\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{new\+Box }\end{DoxyParamCaption})}
+
+Set a new collision box \mbox{\Hypertarget{classColliderComponent_a39b9eac166f15b56e156cf03c7abe98d}\label{classColliderComponent_a39b9eac166f15b56e156cf03c7abe98d}} 
+\index{ColliderComponent@{ColliderComponent}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily virtual void Collider\+Component\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Allocate resources 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Component}}.
+
+\mbox{\Hypertarget{classColliderComponent_a86b7feb57493e2960c835b3a935f94b7}\label{classColliderComponent_a86b7feb57493e2960c835b3a935f94b7}} 
+\index{ColliderComponent@{ColliderComponent}!StopCollision@{StopCollision}}
+\index{StopCollision@{StopCollision}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{StopCollision()}{StopCollision()}}
+{\footnotesize\ttfamily void Collider\+Component\+::\+Stop\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset the collision on this object. 
+
+\mbox{\Hypertarget{classColliderComponent_a4f881bc553cf3748cdad25e3a0b1f3be}\label{classColliderComponent_a4f881bc553cf3748cdad25e3a0b1f3be}} 
+\index{ColliderComponent@{ColliderComponent}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!ColliderComponent@{ColliderComponent}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily virtual json Collider\+Component\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+turn the component into a json 
+
+\begin{DoxyReturn}{Returns}
+json 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Collider\+Component.\+hpp\end{DoxyCompactItemize}

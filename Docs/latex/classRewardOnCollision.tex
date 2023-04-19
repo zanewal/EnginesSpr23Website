@@ -1,0 +1,123 @@
+\hypertarget{classRewardOnCollision}{}\doxysection{Reward\+On\+Collision Class Reference}
+\label{classRewardOnCollision}\index{RewardOnCollision@{RewardOnCollision}}
+
+
+A very simple component that add/delete the point from the player on collision.  
+
+
+
+
+{\ttfamily \#include $<$Reward\+On\+Collision.\+hpp$>$}
+
+Inheritance diagram for Reward\+On\+Collision\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classRewardOnCollision}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRewardOnCollision_a541e557877eaf8d00eec2395ae1ddbaa}{Reward\+On\+Collision}} ()
+\item 
+\mbox{\hyperlink{classRewardOnCollision_a63e7d15d3f7c871c313f363925fd7985}{Reward\+On\+Collision}} (json j)
+\item 
+virtual void \mbox{\hyperlink{classRewardOnCollision_af75e01f0641185ba579ed5e3037edadf}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine) override
+\item 
+json \mbox{\hyperlink{classRewardOnCollision_a4b1fa0907dbb3bb766256677364c792d}{To\+Json}} ()
+\item 
+virtual void \mbox{\hyperlink{classRewardOnCollision_a599096d4eef4467c2cd7ad48c539986a}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A very simple component that add/delete the point from the player on collision. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRewardOnCollision_a541e557877eaf8d00eec2395ae1ddbaa}\label{classRewardOnCollision_a541e557877eaf8d00eec2395ae1ddbaa}} 
+\index{RewardOnCollision@{RewardOnCollision}!RewardOnCollision@{RewardOnCollision}}
+\index{RewardOnCollision@{RewardOnCollision}!RewardOnCollision@{RewardOnCollision}}
+\doxysubsubsection{\texorpdfstring{RewardOnCollision()}{RewardOnCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Reward\+On\+Collision\+::\+Reward\+On\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRewardOnCollision}{Reward\+On\+Collision}} Concentrator \mbox{\Hypertarget{classRewardOnCollision_a63e7d15d3f7c871c313f363925fd7985}\label{classRewardOnCollision_a63e7d15d3f7c871c313f363925fd7985}} 
+\index{RewardOnCollision@{RewardOnCollision}!RewardOnCollision@{RewardOnCollision}}
+\index{RewardOnCollision@{RewardOnCollision}!RewardOnCollision@{RewardOnCollision}}
+\doxysubsubsection{\texorpdfstring{RewardOnCollision()}{RewardOnCollision()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Reward\+On\+Collision\+::\+Reward\+On\+Collision (\begin{DoxyParamCaption}\item[{json}]{j }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classRewardOnCollision}{Reward\+On\+Collision}} Concentrator(\+Overloading) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRewardOnCollision_af75e01f0641185ba579ed5e3037edadf}\label{classRewardOnCollision_af75e01f0641185ba579ed5e3037edadf}} 
+\index{RewardOnCollision@{RewardOnCollision}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!RewardOnCollision@{RewardOnCollision}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily virtual void Reward\+On\+Collision\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Load element into memory 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Component}}.
+
+\mbox{\Hypertarget{classRewardOnCollision_a4b1fa0907dbb3bb766256677364c792d}\label{classRewardOnCollision_a4b1fa0907dbb3bb766256677364c792d}} 
+\index{RewardOnCollision@{RewardOnCollision}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!RewardOnCollision@{RewardOnCollision}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Reward\+On\+Collision\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Convert to Json 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{Component}}.
+
+\mbox{\Hypertarget{classRewardOnCollision_a599096d4eef4467c2cd7ad48c539986a}\label{classRewardOnCollision_a599096d4eef4467c2cd7ad48c539986a}} 
+\index{RewardOnCollision@{RewardOnCollision}!Update@{Update}}
+\index{Update@{Update}!RewardOnCollision@{RewardOnCollision}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Reward\+On\+Collision\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{object,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene,  }\item[{int}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+When detected collision gain a point 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Reward\+On\+Collision.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,676 @@
+\hypertarget{classEngine}{}\doxysection{Engine Class Reference}
+\label{classEngine}\index{Engine@{Engine}}
+
+
+{\ttfamily \#include $<$Engine.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine}} ()
+\item 
+\mbox{\hyperlink{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}{$\sim$\+Engine}} ()
+\item 
+void \mbox{\hyperlink{classEngine_a86d0b632686251e9a9e82ac26d2ea5b8}{Initialize\+Graphics\+Sub\+System}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Request to startup the Graphics Subsystem. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a1fbe9f5cb4abc3572e432cae1f154817}\label{classEngine_a1fbe9f5cb4abc3572e432cae1f154817}} 
+void {\bfseries Start} ()
+\begin{DoxyCompactList}\small\item\em Handles all pre-\/loop actions including updating parents and components will find their dependency. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_a55059f0c0a33f3a84300a89ebd10b855}\label{classEngine_a55059f0c0a33f3a84300a89ebd10b855}} 
+void {\bfseries Stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the game Freeing SDL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a7c359a7bb7b834c8cb6bed388c61c2c7}{Handle\+Events}} (bool read\+Keys)
+\begin{DoxyCompactList}\small\item\em Process any SDL\+\_\+\+Events in queue and passes them to the active scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_af32bf410aad2871508c2fd9d885cb553}{Update}} (int delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update game logic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_acde70aed0043e2e2091d0bb6cce8e3c1}{Render}} ()
+\begin{DoxyCompactList}\small\item\em Per frame render. Renders everything. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a9890e98088df98c357244764344147b3}{Play}} ()
+\begin{DoxyCompactList}\small\item\em a simple Game Loop that runs forever \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a8c954d9393b18d98dff22164a639bbae}{Delay}} (int time)
+\begin{DoxyCompactList}\small\item\em force the sdl to delay some time \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_ac6a76fae166c78f1cc7d94858e111c40}{Get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the current time since the start of the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEngine_addc4f7e07e72ed790a994e1e0b20879a}{Should\+Quit}} ()
+\begin{DoxyCompactList}\small\item\em prompt the game to quit if return true \end{DoxyCompactList}\item 
+SDL\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{classEngine_a330c2d65ac564239be85bf0c9210de27}{Get\+Renderer}} ()
+\begin{DoxyCompactList}\small\item\em Get the scene Renderer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a5b31600041abac8bad43c7ddca6363b8}{Close\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Hide the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_aa9bdec27f6b51d616882d00a373887f1}{Open\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Reopen a hided window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_ae3292b52e38b0cdee8b816825a7abfb7}{Lose}} ()
+\begin{DoxyCompactList}\small\item\em Indicate that the game loses\`{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a1e169d68f2ca39b7bebae2b8144547e5}{Win}} ()
+\begin{DoxyCompactList}\small\item\em Indicate that the game wins. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a62c58364bde475319f4524ff869eec59}{Get\+Win\+Lose}} ()
+\begin{DoxyCompactList}\small\item\em get the win lose condition of the game \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a480c3f66ec104691260c167a13f0c241}{Create\+Scene}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Create an empty scene Adds a scene to the \mbox{\hyperlink{classEngine}{Engine}}\textquotesingle{}s list of scenes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classEngine_a77697ba6136a7a1b80664f2506ad4b1b}{Get\+Active\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Gets a reference to the active scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ \mbox{\hyperlink{classEngine_a2fd1249c0fbab9b6ca32ef5a73171e23}{Get\+Scene}} (int index)
+\begin{DoxyCompactList}\small\item\em Gets a reference to the scene at the given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_ae5611985a4933c17f6c9a56b9e9f12f4}{Change\+Active\+Scene}} (int index)
+\begin{DoxyCompactList}\small\item\em Change the active scene to the scene of the given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a6193c5505408648ed37997dfab760665}{Remove\+Scene}} (int index)
+\begin{DoxyCompactList}\small\item\em Removes the scene at the given index. Does nothing if attempting to remove the active scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a3cac08d58ea6f45d68aa99b762287af0}{Save\+Active\+Scene}} (std\+::string directory)
+\begin{DoxyCompactList}\small\item\em Save the active scene into the directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a224326d5d48bb5d937ef7c52dac59de9}{Load\+Scene}} (std\+::string file)
+\begin{DoxyCompactList}\small\item\em Load a scene from a file and set it as active scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a0764cb31ab9cdd932746a6eafa9b55ab}{Refresh\+Current\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Refresh the current scene, including linking all dependent components and confirm child-\/parent relationship this is a must after adding a component or a game object before running the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_ab2db6b44366ed98511e4e417417a57ac}{Set\+Scene\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the active \mbox{\hyperlink{classScene}{Scene}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEngine_a07da37bd228bfeb62d3613a7e0f5c190}{Get\+Scene\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the active scene name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a9b8337513fbb981cb13d242ce0085597}{Create\+Simple\+Game\+Object}} (std\+::string name, std\+::string image, float x, float y)
+\begin{DoxyCompactList}\small\item\em Create a Simple Game Object in the active scene with all default variables with only a sprite component. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a472dffe0c3b16ff40630a42d1dee84fb}{Create\+Game\+Object}} (std\+::string json)
+\begin{DoxyCompactList}\small\item\em Create a Game Object from json string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEngine_ad8f3658f36a777a8d83beac3bcf160fe}{Delete\+Game\+Object}} (int id)
+\begin{DoxyCompactList}\small\item\em delete a game object from the active scene \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a0a96d8124421fd011534be0afc051174}{Set\+Object\+Position}} (int id, float x, float y)
+\begin{DoxyCompactList}\small\item\em Set the position for an object in the active scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_ac8a2e22d7a769547941d3a9ab2fd2ccb}{Set\+Object\+Name}} (int id, std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name for an object in the active scene. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classEngine_a49bc7ce2401166b9ef62116f2f4ff290}{Get\+Object\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get the max index in this scene. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEngine_abe79770cb9d7cc96faffe103d3d69765}{Get\+Object}} (int id)
+\begin{DoxyCompactList}\small\item\em Get all object data in the current scene. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEngine_ab98a04ab006eba3e3232993e1eaf8ec5}{Get\+Object\+Component}} (int id, std\+::string component)
+\begin{DoxyCompactList}\small\item\em Get the component data of the given object with the name of the component. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classEngine_a100e135915560730b66f9c05d927b933}{Create\+Simple\+Component}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Init a Simple \mbox{\hyperlink{classComponent}{Component}} with the given type with all default data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEngine_ad5d537d82e9f56cdaf601de84b3c668b}{Add\+Component\+To\+Object}} (int id, std\+::string json)
+\begin{DoxyCompactList}\small\item\em Add a component to the given object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a3ad802cf37aadc52c99871d4b7e670d0}{Delete\+All\+Components\+Of\+Object}} (int id)
+\begin{DoxyCompactList}\small\item\em Delete all components of the object except the sprite component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEngine_ac407dd4b121613fe6e577715102febeb}\label{classEngine_ac407dd4b121613fe6e577715102febeb}} 
+void {\bfseries Lose\+Point} (int point)
+\item 
+\mbox{\Hypertarget{classEngine_ab7eb82596d09d371218d39ed543538d2}\label{classEngine_ab7eb82596d09d371218d39ed543538d2}} 
+void {\bfseries Gain\+Point} (int point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classEngine_a9396d2dd275a339004aca84254d8df98}{Log}} (std\+::string log)
+\begin{DoxyCompactList}\small\item\em a helper function to print string into the cout/cerr \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class sets up the main game engine 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}\label{classEngine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}} 
+\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Engine()}{Engine()}}
+{\footnotesize\ttfamily Engine\+::\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}\label{classEngine_a8ef7030a089ecb30bbfcb9e43094717a}} 
+\index{Engine@{Engine}!````~Engine@{$\sim$Engine}}
+\index{````~Engine@{$\sim$Engine}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{$\sim$Engine()}{~Engine()}}
+{\footnotesize\ttfamily Engine\+::$\sim$\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEngine_ad5d537d82e9f56cdaf601de84b3c668b}\label{classEngine_ad5d537d82e9f56cdaf601de84b3c668b}} 
+\index{Engine@{Engine}!AddComponentToObject@{AddComponentToObject}}
+\index{AddComponentToObject@{AddComponentToObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{AddComponentToObject()}{AddComponentToObject()}}
+{\footnotesize\ttfamily bool Engine\+::\+Add\+Component\+To\+Object (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::string}]{json }\end{DoxyParamCaption})}
+
+
+
+Add a component to the given object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the object index number \\
+\hline
+{\em string} & the json string of the component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if add successfully 
+
+false if fail, e.\+g. json incorrect or incompleted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_ae5611985a4933c17f6c9a56b9e9f12f4}\label{classEngine_ae5611985a4933c17f6c9a56b9e9f12f4}} 
+\index{Engine@{Engine}!ChangeActiveScene@{ChangeActiveScene}}
+\index{ChangeActiveScene@{ChangeActiveScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{ChangeActiveScene()}{ChangeActiveScene()}}
+{\footnotesize\ttfamily void Engine\+::\+Change\+Active\+Scene (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Change the active scene to the scene of the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the scene index to switch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a5b31600041abac8bad43c7ddca6363b8}\label{classEngine_a5b31600041abac8bad43c7ddca6363b8}} 
+\index{Engine@{Engine}!CloseWindow@{CloseWindow}}
+\index{CloseWindow@{CloseWindow}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{CloseWindow()}{CloseWindow()}}
+{\footnotesize\ttfamily void Engine\+::\+Close\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Hide the window. 
+
+\mbox{\Hypertarget{classEngine_a472dffe0c3b16ff40630a42d1dee84fb}\label{classEngine_a472dffe0c3b16ff40630a42d1dee84fb}} 
+\index{Engine@{Engine}!CreateGameObject@{CreateGameObject}}
+\index{CreateGameObject@{CreateGameObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{CreateGameObject()}{CreateGameObject()}}
+{\footnotesize\ttfamily int Engine\+::\+Create\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{json }\end{DoxyParamCaption})}
+
+
+
+Create a Game Object from json string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em json} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the new game object index in the scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a480c3f66ec104691260c167a13f0c241}\label{classEngine_a480c3f66ec104691260c167a13f0c241}} 
+\index{Engine@{Engine}!CreateScene@{CreateScene}}
+\index{CreateScene@{CreateScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{CreateScene()}{CreateScene()}}
+{\footnotesize\ttfamily int Engine\+::\+Create\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Create an empty scene Adds a scene to the \mbox{\hyperlink{classEngine}{Engine}}\textquotesingle{}s list of scenes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the scene name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a100e135915560730b66f9c05d927b933}\label{classEngine_a100e135915560730b66f9c05d927b933}} 
+\index{Engine@{Engine}!CreateSimpleComponent@{CreateSimpleComponent}}
+\index{CreateSimpleComponent@{CreateSimpleComponent}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{CreateSimpleComponent()}{CreateSimpleComponent()}}
+{\footnotesize\ttfamily std\+::string Engine\+::\+Create\+Simple\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Init a Simple \mbox{\hyperlink{classComponent}{Component}} with the given type with all default data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the type of the component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the json data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a9b8337513fbb981cb13d242ce0085597}\label{classEngine_a9b8337513fbb981cb13d242ce0085597}} 
+\index{Engine@{Engine}!CreateSimpleGameObject@{CreateSimpleGameObject}}
+\index{CreateSimpleGameObject@{CreateSimpleGameObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{CreateSimpleGameObject()}{CreateSimpleGameObject()}}
+{\footnotesize\ttfamily int Engine\+::\+Create\+Simple\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{image,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Create a Simple Game Object in the active scene with all default variables with only a sprite component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the object name \\
+\hline
+{\em image} & the image for sprite component \\
+\hline
+{\em x} & initial x position \\
+\hline
+{\em y} & initial y position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new game object index in the scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a8c954d9393b18d98dff22164a639bbae}\label{classEngine_a8c954d9393b18d98dff22164a639bbae}} 
+\index{Engine@{Engine}!Delay@{Delay}}
+\index{Delay@{Delay}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Delay()}{Delay()}}
+{\footnotesize\ttfamily void Engine\+::\+Delay (\begin{DoxyParamCaption}\item[{int}]{time }\end{DoxyParamCaption})}
+
+
+
+force the sdl to delay some time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & in millisecond \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a3ad802cf37aadc52c99871d4b7e670d0}\label{classEngine_a3ad802cf37aadc52c99871d4b7e670d0}} 
+\index{Engine@{Engine}!DeleteAllComponentsOfObject@{DeleteAllComponentsOfObject}}
+\index{DeleteAllComponentsOfObject@{DeleteAllComponentsOfObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{DeleteAllComponentsOfObject()}{DeleteAllComponentsOfObject()}}
+{\footnotesize\ttfamily void Engine\+::\+Delete\+All\+Components\+Of\+Object (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Delete all components of the object except the sprite component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the objct index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ad8f3658f36a777a8d83beac3bcf160fe}\label{classEngine_ad8f3658f36a777a8d83beac3bcf160fe}} 
+\index{Engine@{Engine}!DeleteGameObject@{DeleteGameObject}}
+\index{DeleteGameObject@{DeleteGameObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{DeleteGameObject()}{DeleteGameObject()}}
+{\footnotesize\ttfamily std\+::string Engine\+::\+Delete\+Game\+Object (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+delete a game object from the active scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string the deleted game object json file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a77697ba6136a7a1b80664f2506ad4b1b}\label{classEngine_a77697ba6136a7a1b80664f2506ad4b1b}} 
+\index{Engine@{Engine}!GetActiveScene@{GetActiveScene}}
+\index{GetActiveScene@{GetActiveScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetActiveScene()}{GetActiveScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}} $\ast$ Engine\+::\+Get\+Active\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the active scene. 
+
+\begin{DoxyReturn}{Returns}
+the pointer to the scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_abe79770cb9d7cc96faffe103d3d69765}\label{classEngine_abe79770cb9d7cc96faffe103d3d69765}} 
+\index{Engine@{Engine}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily std\+::string Engine\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Get all object data in the current scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the json string of the object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_ab98a04ab006eba3e3232993e1eaf8ec5}\label{classEngine_ab98a04ab006eba3e3232993e1eaf8ec5}} 
+\index{Engine@{Engine}!GetObjectComponent@{GetObjectComponent}}
+\index{GetObjectComponent@{GetObjectComponent}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetObjectComponent()}{GetObjectComponent()}}
+{\footnotesize\ttfamily std\+::string Engine\+::\+Get\+Object\+Component (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::string}]{component }\end{DoxyParamCaption})}
+
+
+
+Get the component data of the given object with the name of the component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the object index in the active scene \\
+\hline
+{\em component} & the component name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the json string og the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a49bc7ce2401166b9ef62116f2f4ff290}\label{classEngine_a49bc7ce2401166b9ef62116f2f4ff290}} 
+\index{Engine@{Engine}!GetObjectCount@{GetObjectCount}}
+\index{GetObjectCount@{GetObjectCount}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetObjectCount()}{GetObjectCount()}}
+{\footnotesize\ttfamily int Engine\+::\+Get\+Object\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the max index in this scene. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a330c2d65ac564239be85bf0c9210de27}\label{classEngine_a330c2d65ac564239be85bf0c9210de27}} 
+\index{Engine@{Engine}!GetRenderer@{GetRenderer}}
+\index{GetRenderer@{GetRenderer}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetRenderer()}{GetRenderer()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer $\ast$ Engine\+::\+Get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the scene Renderer. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a2fd1249c0fbab9b6ca32ef5a73171e23}\label{classEngine_a2fd1249c0fbab9b6ca32ef5a73171e23}} 
+\index{Engine@{Engine}!GetScene@{GetScene}}
+\index{GetScene@{GetScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetScene()}{GetScene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classScene}{Scene}} $\ast$ Engine\+::\+Get\+Scene (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Gets a reference to the scene at the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the scene index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scene pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a07da37bd228bfeb62d3613a7e0f5c190}\label{classEngine_a07da37bd228bfeb62d3613a7e0f5c190}} 
+\index{Engine@{Engine}!GetSceneName@{GetSceneName}}
+\index{GetSceneName@{GetSceneName}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetSceneName()}{GetSceneName()}}
+{\footnotesize\ttfamily std\+::string Engine\+::\+Get\+Scene\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the active scene name. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_ac6a76fae166c78f1cc7d94858e111c40}\label{classEngine_ac6a76fae166c78f1cc7d94858e111c40}} 
+\index{Engine@{Engine}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily int Engine\+::\+Get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current time since the start of the game. 
+
+\begin{DoxyReturn}{Returns}
+in millisecond 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a62c58364bde475319f4524ff869eec59}\label{classEngine_a62c58364bde475319f4524ff869eec59}} 
+\index{Engine@{Engine}!GetWinLose@{GetWinLose}}
+\index{GetWinLose@{GetWinLose}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{GetWinLose()}{GetWinLose()}}
+{\footnotesize\ttfamily int Engine\+::\+Get\+Win\+Lose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get the win lose condition of the game 
+
+\begin{DoxyReturn}{Returns}
+-\/1 = lose, 0 = in play, 1 = win 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a7c359a7bb7b834c8cb6bed388c61c2c7}\label{classEngine_a7c359a7bb7b834c8cb6bed388c61c2c7}} 
+\index{Engine@{Engine}!HandleEvents@{HandleEvents}}
+\index{HandleEvents@{HandleEvents}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{HandleEvents()}{HandleEvents()}}
+{\footnotesize\ttfamily void Engine\+::\+Handle\+Events (\begin{DoxyParamCaption}\item[{bool}]{read\+Keys }\end{DoxyParamCaption})}
+
+
+
+Process any SDL\+\_\+\+Events in queue and passes them to the active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em read\+Keys} & whether to read the key input \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a86d0b632686251e9a9e82ac26d2ea5b8}\label{classEngine_a86d0b632686251e9a9e82ac26d2ea5b8}} 
+\index{Engine@{Engine}!InitializeGraphicsSubSystem@{InitializeGraphicsSubSystem}}
+\index{InitializeGraphicsSubSystem@{InitializeGraphicsSubSystem}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{InitializeGraphicsSubSystem()}{InitializeGraphicsSubSystem()}}
+{\footnotesize\ttfamily void Engine\+::\+Initialize\+Graphics\+Sub\+System (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Request to startup the Graphics Subsystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & sceen width \\
+\hline
+{\em h} & sceen height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a224326d5d48bb5d937ef7c52dac59de9}\label{classEngine_a224326d5d48bb5d937ef7c52dac59de9}} 
+\index{Engine@{Engine}!LoadScene@{LoadScene}}
+\index{LoadScene@{LoadScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{LoadScene()}{LoadScene()}}
+{\footnotesize\ttfamily int Engine\+::\+Load\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{file }\end{DoxyParamCaption})}
+
+
+
+Load a scene from a file and set it as active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & the file path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a9396d2dd275a339004aca84254d8df98}\label{classEngine_a9396d2dd275a339004aca84254d8df98}} 
+\index{Engine@{Engine}!Log@{Log}}
+\index{Log@{Log}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Log()}{Log()}}
+{\footnotesize\ttfamily static void Engine\+::\+Log (\begin{DoxyParamCaption}\item[{std\+::string}]{log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+a helper function to print string into the cout/cerr 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ae3292b52e38b0cdee8b816825a7abfb7}\label{classEngine_ae3292b52e38b0cdee8b816825a7abfb7}} 
+\index{Engine@{Engine}!Lose@{Lose}}
+\index{Lose@{Lose}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Lose()}{Lose()}}
+{\footnotesize\ttfamily void Engine\+::\+Lose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Indicate that the game loses\`{}. 
+
+\mbox{\Hypertarget{classEngine_aa9bdec27f6b51d616882d00a373887f1}\label{classEngine_aa9bdec27f6b51d616882d00a373887f1}} 
+\index{Engine@{Engine}!OpenWindow@{OpenWindow}}
+\index{OpenWindow@{OpenWindow}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{OpenWindow()}{OpenWindow()}}
+{\footnotesize\ttfamily void Engine\+::\+Open\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reopen a hided window. 
+
+\mbox{\Hypertarget{classEngine_a9890e98088df98c357244764344147b3}\label{classEngine_a9890e98088df98c357244764344147b3}} 
+\index{Engine@{Engine}!Play@{Play}}
+\index{Play@{Play}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Engine\+::\+Play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+a simple Game Loop that runs forever 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a0764cb31ab9cdd932746a6eafa9b55ab}\label{classEngine_a0764cb31ab9cdd932746a6eafa9b55ab}} 
+\index{Engine@{Engine}!RefreshCurrentScene@{RefreshCurrentScene}}
+\index{RefreshCurrentScene@{RefreshCurrentScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{RefreshCurrentScene()}{RefreshCurrentScene()}}
+{\footnotesize\ttfamily void Engine\+::\+Refresh\+Current\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Refresh the current scene, including linking all dependent components and confirm child-\/parent relationship this is a must after adding a component or a game object before running the scene. 
+
+\mbox{\Hypertarget{classEngine_a6193c5505408648ed37997dfab760665}\label{classEngine_a6193c5505408648ed37997dfab760665}} 
+\index{Engine@{Engine}!RemoveScene@{RemoveScene}}
+\index{RemoveScene@{RemoveScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{RemoveScene()}{RemoveScene()}}
+{\footnotesize\ttfamily void Engine\+::\+Remove\+Scene (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes the scene at the given index. Does nothing if attempting to remove the active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the scene index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_acde70aed0043e2e2091d0bb6cce8e3c1}\label{classEngine_acde70aed0043e2e2091d0bb6cce8e3c1}} 
+\index{Engine@{Engine}!Render@{Render}}
+\index{Render@{Render}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Engine\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Per frame render. Renders everything. 
+
+\mbox{\Hypertarget{classEngine_a3cac08d58ea6f45d68aa99b762287af0}\label{classEngine_a3cac08d58ea6f45d68aa99b762287af0}} 
+\index{Engine@{Engine}!SaveActiveScene@{SaveActiveScene}}
+\index{SaveActiveScene@{SaveActiveScene}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{SaveActiveScene()}{SaveActiveScene()}}
+{\footnotesize\ttfamily void Engine\+::\+Save\+Active\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{directory }\end{DoxyParamCaption})}
+
+
+
+Save the active scene into the directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em directory} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ac8a2e22d7a769547941d3a9ab2fd2ccb}\label{classEngine_ac8a2e22d7a769547941d3a9ab2fd2ccb}} 
+\index{Engine@{Engine}!SetObjectName@{SetObjectName}}
+\index{SetObjectName@{SetObjectName}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{SetObjectName()}{SetObjectName()}}
+{\footnotesize\ttfamily void Engine\+::\+Set\+Object\+Name (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name for an object in the active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the object index \\
+\hline
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_a0a96d8124421fd011534be0afc051174}\label{classEngine_a0a96d8124421fd011534be0afc051174}} 
+\index{Engine@{Engine}!SetObjectPosition@{SetObjectPosition}}
+\index{SetObjectPosition@{SetObjectPosition}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{SetObjectPosition()}{SetObjectPosition()}}
+{\footnotesize\ttfamily void Engine\+::\+Set\+Object\+Position (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Set the position for an object in the active scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & the object index \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_ab2db6b44366ed98511e4e417417a57ac}\label{classEngine_ab2db6b44366ed98511e4e417417a57ac}} 
+\index{Engine@{Engine}!SetSceneName@{SetSceneName}}
+\index{SetSceneName@{SetSceneName}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{SetSceneName()}{SetSceneName()}}
+{\footnotesize\ttfamily void Engine\+::\+Set\+Scene\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the active \mbox{\hyperlink{classScene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEngine_addc4f7e07e72ed790a994e1e0b20879a}\label{classEngine_addc4f7e07e72ed790a994e1e0b20879a}} 
+\index{Engine@{Engine}!ShouldQuit@{ShouldQuit}}
+\index{ShouldQuit@{ShouldQuit}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{ShouldQuit()}{ShouldQuit()}}
+{\footnotesize\ttfamily bool Engine\+::\+Should\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+prompt the game to quit if return true 
+
+\begin{DoxyReturn}{Returns}
+whether the game should quit in next frame 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_af32bf410aad2871508c2fd9d885cb553}\label{classEngine_af32bf410aad2871508c2fd9d885cb553}} 
+\index{Engine@{Engine}!Update@{Update}}
+\index{Update@{Update}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Engine\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Update game logic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & the time from last frame \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEngine_a1e169d68f2ca39b7bebae2b8144547e5}\label{classEngine_a1e169d68f2ca39b7bebae2b8144547e5}} 
+\index{Engine@{Engine}!Win@{Win}}
+\index{Win@{Win}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{Win()}{Win()}}
+{\footnotesize\ttfamily void Engine\+::\+Win (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Indicate that the game wins. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Engine.\+hpp\end{DoxyCompactItemize}

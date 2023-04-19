@@ -1,0 +1,51 @@
+\hypertarget{SpriteComponent_8hpp_source}{}\doxysection{Sprite\+Component.\+hpp}
+\label{SpriteComponent_8hpp_source}\index{include/Components/SpriteComponent.hpp@{include/Components/SpriteComponent.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SPRITECOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SPRITECOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpriteComponent}{SpriteComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classSpriteComponent_a961f54a1999fba83e21c123d37a0540e}{SpriteComponent}}(std::string\ imagepath);}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classSpriteComponent}{SpriteComponent}}(json\ j);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ json\ \mbox{\hyperlink{classSpriteComponent_a32f99edd8338df22d40997d8b25060ce}{ToJson}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_ae9faf31926d216faa3d981b5495a7bc3}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_a83b2daa33fd66f04a8d73700b0266751}{ShutDown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_aa5ef07b5846194233068ac1c3cbddfec}{Render}}(SDL\_Renderer\ *ren)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classSpriteComponent_afeb6a30921911e901c293474b18cdb5f}{GetPosition}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ \mbox{\hyperlink{classSpriteComponent_a275271237b47490f322254b9a3b8fcb6}{GetRotation}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classSpriteComponent_abf2b2b31a57e54e32a10b7fe72fa40da}{GetScale}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_ada7a69b50c12f7255e6241158245508d}{SetPosition}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ newPosition);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_a283c0fd1f6bb68b68f37debe6de61bdb}{SetRotation}}(\mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ newRotation);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpriteComponent_af0d9b894f728609bcc5abe4e2e5ce4b2}{SetScale}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ newScale);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSpriteComponent_a47b5cf52468e5b436282e5b8485d0cf7}{GetX}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSpriteComponent_a03aea21043ee9652220803af0e3945c3}{GetY}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSpriteComponent_ac454366af0baa55653e47ea190f227f9}{GetWidth}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classSpriteComponent_a4f7df4aa18eb6060d1957e01e52fb047}{GetHeight}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ position;}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ rotation;\ \textcolor{comment}{//\ currently\ unused}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ scale;\ \ \ \ \ \ \ \textcolor{comment}{//\ currently\ unused}}
+\DoxyCodeLine{00084\ \ \ \ \ std::string\ texturePath;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ SDL\_Rect\ srcRect;}
+\DoxyCodeLine{00087\ \ \ \ \ SDL\_Rect\ dstRect;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ SDL\_Texture\ *texture;}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

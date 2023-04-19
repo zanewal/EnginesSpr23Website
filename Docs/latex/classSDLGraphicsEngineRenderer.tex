@@ -1,0 +1,136 @@
+\hypertarget{classSDLGraphicsEngineRenderer}{}\doxysection{SDLGraphics\+Engine\+Renderer Class Reference}
+\label{classSDLGraphicsEngineRenderer}\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+Inheritance diagram for SDLGraphics\+Engine\+Renderer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSDLGraphicsEngineRenderer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSDLGraphicsEngineRenderer_afafd7dde79129ee3f0a31a855488af1a}{SDLGraphics\+Engine\+Renderer}} ()
+\item 
+\mbox{\hyperlink{classSDLGraphicsEngineRenderer_a1420b7422b6cbaadae4490c554716117}{$\sim$\+SDLGraphics\+Engine\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a91b29bf19986c6ad8710238778312277}{Set\+Render\+Draw\+Color}} (int r, int g, int b, int a) override
+\item 
+void \mbox{\hyperlink{classSDLGraphicsEngineRenderer_ae6edfc67a39076c0c12101ad85be4f6a}{Render\+Clear}} () override
+\item 
+void \mbox{\hyperlink{classSDLGraphicsEngineRenderer_acddd7c456e4311d71fc1d43f29343d81}{Render\+Present}} () override
+\item 
+void \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a6726b9567c63efce88a4fe9303d80f7f}{Start\+Window}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Start a window with width and height. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_abd24deb029577fc237b47a3cbf30c121}{Get\+Window}} ()
+\item 
+SDL\+\_\+\+Renderer $\ast$ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a93e5f435d003933cf3304e44c5aa7324}{Get\+Renderer}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIGraphicsEngineRenderer}{IGraphics\+Engine\+Renderer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIGraphicsEngineRenderer_a54ff623ea2317c506ade9be1fc1a53e6}{IGraphics\+Engine\+Renderer}} ()
+\item 
+virtual \mbox{\hyperlink{classIGraphicsEngineRenderer_a1b5219e8b718d38b4e54be31557eee17}{$\sim$\+IGraphics\+Engine\+Renderer}} ()
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}{Set\+Render\+Draw\+Color}} (int r, int g, int b, int a)=0
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}{Render\+Clear}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}{Render\+Present}} ()=0
+\item 
+virtual int \mbox{\hyperlink{classIGraphicsEngineRenderer_a8da661ff2c958a1851d56acf4b60f45d}{Get\+Window\+Width}} ()
+\begin{DoxyCompactList}\small\item\em Get the Window Width. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classIGraphicsEngineRenderer_a7883fa84b4aef306d9cda2bc3db173d6}{Get\+Window\+Height}} ()
+\begin{DoxyCompactList}\small\item\em Get the Window Height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classIGraphicsEngineRenderer}{IGraphics\+Engine\+Renderer}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a5fc1eeeea4c45bac9a30b04380200632}\label{classIGraphicsEngineRenderer_a5fc1eeeea4c45bac9a30b04380200632}} 
+int {\bfseries m\+Screen\+Width} \{0\}
+\item 
+\mbox{\Hypertarget{classIGraphicsEngineRenderer_a53ad0e9c3338aeb89ec73dda3b7f9a3d}\label{classIGraphicsEngineRenderer_a53ad0e9c3338aeb89ec73dda3b7f9a3d}} 
+int {\bfseries m\+Screen\+Height} \{0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSDLGraphicsEngineRenderer_afafd7dde79129ee3f0a31a855488af1a}\label{classSDLGraphicsEngineRenderer_afafd7dde79129ee3f0a31a855488af1a}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{SDLGraphicsEngineRenderer()}{SDLGraphicsEngineRenderer()}}
+{\footnotesize\ttfamily SDLGraphics\+Engine\+Renderer\+::\+SDLGraphics\+Engine\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Concrete implementation of constructor \mbox{\Hypertarget{classSDLGraphicsEngineRenderer_a1420b7422b6cbaadae4490c554716117}\label{classSDLGraphicsEngineRenderer_a1420b7422b6cbaadae4490c554716117}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!````~SDLGraphicsEngineRenderer@{$\sim$SDLGraphicsEngineRenderer}}
+\index{````~SDLGraphicsEngineRenderer@{$\sim$SDLGraphicsEngineRenderer}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{$\sim$SDLGraphicsEngineRenderer()}{~SDLGraphicsEngineRenderer()}}
+{\footnotesize\ttfamily SDLGraphics\+Engine\+Renderer\+::$\sim$\+SDLGraphics\+Engine\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSDLGraphicsEngineRenderer_a93e5f435d003933cf3304e44c5aa7324}\label{classSDLGraphicsEngineRenderer_a93e5f435d003933cf3304e44c5aa7324}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!GetRenderer@{GetRenderer}}
+\index{GetRenderer@{GetRenderer}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{GetRenderer()}{GetRenderer()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Renderer $\ast$ SDLGraphics\+Engine\+Renderer\+::\+Get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get Pointer to Renderer \mbox{\Hypertarget{classSDLGraphicsEngineRenderer_abd24deb029577fc237b47a3cbf30c121}\label{classSDLGraphicsEngineRenderer_abd24deb029577fc237b47a3cbf30c121}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!GetWindow@{GetWindow}}
+\index{GetWindow@{GetWindow}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{GetWindow()}{GetWindow()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window $\ast$ SDLGraphics\+Engine\+Renderer\+::\+Get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get Pointer to Window \mbox{\Hypertarget{classSDLGraphicsEngineRenderer_ae6edfc67a39076c0c12101ad85be4f6a}\label{classSDLGraphicsEngineRenderer_ae6edfc67a39076c0c12101ad85be4f6a}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!RenderClear@{RenderClear}}
+\index{RenderClear@{RenderClear}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderClear()}{RenderClear()}}
+{\footnotesize\ttfamily void SDLGraphics\+Engine\+Renderer\+::\+Render\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Clear the screen 
+
+Implements \mbox{\hyperlink{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}{IGraphics\+Engine\+Renderer}}.
+
+\mbox{\Hypertarget{classSDLGraphicsEngineRenderer_acddd7c456e4311d71fc1d43f29343d81}\label{classSDLGraphicsEngineRenderer_acddd7c456e4311d71fc1d43f29343d81}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!RenderPresent@{RenderPresent}}
+\index{RenderPresent@{RenderPresent}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderPresent()}{RenderPresent()}}
+{\footnotesize\ttfamily void SDLGraphics\+Engine\+Renderer\+::\+Render\+Present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Render whatever is in the backbuffer to the screen. 
+
+Implements \mbox{\hyperlink{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}{IGraphics\+Engine\+Renderer}}.
+
+\mbox{\Hypertarget{classSDLGraphicsEngineRenderer_a91b29bf19986c6ad8710238778312277}\label{classSDLGraphicsEngineRenderer_a91b29bf19986c6ad8710238778312277}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!SetRenderDrawColor@{SetRenderDrawColor}}
+\index{SetRenderDrawColor@{SetRenderDrawColor}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{SetRenderDrawColor()}{SetRenderDrawColor()}}
+{\footnotesize\ttfamily void SDLGraphics\+Engine\+Renderer\+::\+Set\+Render\+Draw\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b,  }\item[{int}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Sets the draw color for the renderer 
+
+Implements \mbox{\hyperlink{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}{IGraphics\+Engine\+Renderer}}.
+
+\mbox{\Hypertarget{classSDLGraphicsEngineRenderer_a6726b9567c63efce88a4fe9303d80f7f}\label{classSDLGraphicsEngineRenderer_a6726b9567c63efce88a4fe9303d80f7f}} 
+\index{SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}!StartWindow@{StartWindow}}
+\index{StartWindow@{StartWindow}!SDLGraphicsEngineRenderer@{SDLGraphicsEngineRenderer}}
+\doxysubsubsection{\texorpdfstring{StartWindow()}{StartWindow()}}
+{\footnotesize\ttfamily void SDLGraphics\+Engine\+Renderer\+::\+Start\+Window (\begin{DoxyParamCaption}\item[{int}]{w,  }\item[{int}]{h }\end{DoxyParamCaption})}
+
+
+
+Start a window with width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & width \\
+\hline
+{\em h} & height \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IGraphics\+Engine\+Renderer.\+hpp\end{DoxyCompactItemize}

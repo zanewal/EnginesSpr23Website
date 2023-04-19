@@ -1,0 +1,410 @@
+\hypertarget{TinyMath_8hpp_source}{}\doxysection{Tiny\+Math.\+hpp}
+\label{TinyMath_8hpp_source}\index{include/TinyMath.hpp@{include/TinyMath.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TINYMATH\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TINYMATH\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ DELTA\ 0.0001f}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ Forward\ references\ of\ each\ of\ the\ structs}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structVec2D}{Vec2D}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMatrix3D}{Matrix3D}};}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Vec2D\ performs\ vector\ operations\ with\ 3-\/dimensions}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ The\ purpose\ of\ this\ class\ is\ primarily\ for\ 3D\ graphics}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ applications.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structVec2D}{Vec2D}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ ZERO;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ UP;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ DOWN;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ LEFT;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ RIGHT;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ I'm\ wrapping\ all\ of\ our\ member\ variables\ in\ a\ union.}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//\ So\ long\ as\ you\ make\ sure\ the\ byte-\/size\ is\ equivalent,\ this}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//\ allows\ you\ to\ access\ the\ data\ in\ whatever\ form\ is\ most\ convenient.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Meaning\ I\ can\ access\ Vec2D[0]\ or\ equivalently\ Vec2D.x\ .}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{comment}{//\ I\ can\ also\ pass\ Vec2D\ internal\ array\ or\ just\ individual\ values\ if\ needed\ conveniently.}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ x,y\ are\ a\ convention}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ x,y\ could\ be\ position,\ but\ also\ any\ 2-\/component\ value.}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ w;\ \textcolor{comment}{//\ 'w'\ is\ a\ third\ hidden\ component\ that\ could\ be\ used}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ to\ determine\ if\ this\ is\ being\ used\ as\ a\ vector\ or\ a\ point}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ If\ w=0\ then\ a\ vector,\ if\ w=1\ then\ a\ point}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DO\ not\ use\ 'w'\ for\ any\ computation\ however.}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ data[3];\ \textcolor{comment}{//\ for\ convenience\ if\ you\ want\ to\ access\ as\ 'data'\ or\ pass\ Vec2D\ as\ an\ array}}
+\DoxyCodeLine{00045\ \ \ \ \ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ The\ "{}Real"{}\ constructor\ we\ want\ to\ use.}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ This\ initializes\ the\ values\ x,y,\ and\ the\ 'w'\ value}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}(\textcolor{keywordtype}{float}\ \_x\ =\ 0,\ \textcolor{keywordtype}{float}\ \_y\ =\ 0,\ \textcolor{keywordtype}{float}\ \_w\ =\ 0)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ x\ =\ \_x;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ y\ =\ \_y;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ w\ =\ \_w;}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}(json\ j)}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ x\ =\ j[\textcolor{stringliteral}{"{}x"{}}];}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ y\ =\ j[\textcolor{stringliteral}{"{}y"{}}];}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ w\ =\ j[\textcolor{stringliteral}{"{}w"{}}];}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ json\ ToJson()}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ json\ j;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ j[\textcolor{stringliteral}{"{}x"{}}]\ =\ x;}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ j[\textcolor{stringliteral}{"{}y"{}}]\ =\ y;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ j[\textcolor{stringliteral}{"{}w"{}}]\ =\ w;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ j;}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Normalize()}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mag\ =\ std::sqrt(x\ *\ x\ +\ y\ *\ y);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mag\ !=\ 0)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structVec2D}{Vec2D}}(x\ /\ mag,\ y\ /\ mag);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ZERO;}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Index\ operator,\ allowing\ us\ to\ access\ the\ individual}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//\ x,y\ components\ of\ our\ vector.}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \&operator[](\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00084\ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\&x)[i]);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{comment}{//\ Index\ operator,\ allowing\ us\ to\ access\ the\ individual}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ x,y\ components\ of\ our\ vector.}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&operator[](\textcolor{keywordtype}{int}\ i)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00091\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\&x)[i]);}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{//\ Multiplication\ Operator}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Multiply\ vector\ by\ a\ uniform-\/scalar.}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator*=(\textcolor{keywordtype}{float}\ s)}
+\DoxyCodeLine{00098\ \ \ \ \ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ x\ *=\ s;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ y\ *=\ s;}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//\ Division\ Operator}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator/=(\textcolor{keywordtype}{float}\ s)}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ x\ /=\ s;}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ y\ /=\ s;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ Addition\ operator}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator+=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00114\ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (w\ ==\ 1\ \&\&\ v.w\ ==\ 1)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot\ add\ two\ points"{}});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ x\ +=\ v.x;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ y\ +=\ v.y;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ Subtraction\ operator}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator-\/=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ x\ -\/=\ v.x;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ y\ -\/=\ v.y;}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ w\ =\ 0;}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{this});}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{inline}\ std::string\ ToString()}
+\DoxyCodeLine{00137\ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}["{}}\ +\ std::to\_string(x)\ +\ \textcolor{stringliteral}{"{},"{}}\ +\ std::to\_string(y)\ +\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Vec2D::ZERO\ =\ \mbox{\hyperlink{structVec2D}{Vec2D}}(0,\ 0,\ 0);}
+\DoxyCodeLine{00143\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Vec2D::UP\ =\ \mbox{\hyperlink{structVec2D}{Vec2D}}(0,\ -\/1,\ 0);}
+\DoxyCodeLine{00144\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Vec2D::DOWN\ =\ \mbox{\hyperlink{structVec2D}{Vec2D}}(0,\ 1,\ 0);}
+\DoxyCodeLine{00145\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Vec2D::LEFT\ =\ \mbox{\hyperlink{structVec2D}{Vec2D}}(-\/1,\ 0,\ 0);}
+\DoxyCodeLine{00146\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Vec2D::RIGHT\ =\ \mbox{\hyperlink{structVec2D}{Vec2D}}(1,\ 0,\ 0);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ *\ Compute\ the\ dot\ product\ of\ a\ Vec2D}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ Dot(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ (a.x\ *\ b.x)\ +\ (a.y\ *\ b.y);}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ *\ Test\ for\ equality}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&rhs)}
+\DoxyCodeLine{00159\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordflow}{return}\ (abs(lhs.x\ -\/\ rhs.x)\ <\ DELTA)\ \&\&\ (abs(lhs.y\ -\/\ rhs.y)\ <\ DELTA);}
+\DoxyCodeLine{00161\ \}}
+\DoxyCodeLine{00162\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ *\ Test\ for\ inequality}}
+\DoxyCodeLine{00164\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ operator!=(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&lhs,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&rhs)}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordflow}{return}\ (abs(lhs.x\ -\/\ rhs.x)\ >\ DELTA)\ ||\ (abs(lhs.y\ -\/\ rhs.y)\ >\ DELTA);}
+\DoxyCodeLine{00168\ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ *\ Multiplication\ of\ a\ vector\ by\ a\ scalar\ values}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00173\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v,\ \textcolor{keywordtype}{float}\ s)}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00176\ \ \ \ \ vec.x\ =\ v.x\ *\ s;}
+\DoxyCodeLine{00177\ \ \ \ \ vec.y\ =\ v.y\ *\ s;}
+\DoxyCodeLine{00178\ \ \ \ \ vec.w\ =\ v.w;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00180\ \}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00183\ \textcolor{comment}{\ *\ Division\ of\ a\ vector\ by\ a\ scalar\ value.}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00185\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator/(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v,\ \textcolor{keywordtype}{float}\ s)}
+\DoxyCodeLine{00186\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00188\ \ \ \ \ vec.x\ =\ v.x\ /\ s;}
+\DoxyCodeLine{00189\ \ \ \ \ vec.y\ =\ v.y\ /\ s;}
+\DoxyCodeLine{00190\ \ \ \ \ vec.w\ =\ v.w;}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00194\ \textcolor{comment}{\ *\ Negation\ of\ a\ vector}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ *\ Use\ Case:\ Sometimes\ it\ is\ handy\ to\ apply\ a\ force\ in\ an\ opposite\ direction}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00197\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00198\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00200\ \ \ \ \ vec.x\ =\ -\/v.x;}
+\DoxyCodeLine{00201\ \ \ \ \ vec.y\ =\ -\/v.y;}
+\DoxyCodeLine{00202\ \ \ \ \ vec.w\ =\ v.w;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00207\ \textcolor{comment}{\ *\ Return\ the\ magnitude\ of\ a\ vector}}
+\DoxyCodeLine{00208\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ Magnitude(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00210\ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ sqrtf(v.x\ *\ v.x\ +\ v.y\ *\ v.y);}
+\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{00213\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00214\ \textcolor{comment}{\ *\ Add\ two\ vectors\ together}}
+\DoxyCodeLine{00215\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00216\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator+(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b)}
+\DoxyCodeLine{00217\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (a.w\ ==\ 1\ \&\&\ b.w\ ==\ 1)}
+\DoxyCodeLine{00220\ \ \ \ \ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Cannot\ add\ two\ points"{}});}
+\DoxyCodeLine{00222\ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ vec.x\ =\ a.x\ +\ b.x;}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ vec.y\ =\ a.y\ +\ b.y;}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ vec.w\ =\ a.w;}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00230\ \}}
+\DoxyCodeLine{00231\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00232\ \textcolor{comment}{\ *\ Subtract\ two\ vectors}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00234\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator-\/(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b)}
+\DoxyCodeLine{00235\ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00237\ \ \ \ \ vec.x\ =\ a.x\ -\/\ b.x;}
+\DoxyCodeLine{00238\ \ \ \ \ vec.y\ =\ a.y\ -\/\ b.y;}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{comment}{//\ default\ vec.w\ is\ 0}}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00241\ \}}
+\DoxyCodeLine{00242\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ *\ Vector\ Projection}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00245\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Project(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b)}
+\DoxyCodeLine{00246\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{float}\ magB\ =\ Magnitude(b);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ Dot(a,\ b)\ /\ (magB\ *\ magB);}
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00250\ \ \ \ \ vec.x\ =\ b.x\ *\ scale;}
+\DoxyCodeLine{00251\ \ \ \ \ vec.y\ =\ b.y\ *\ scale;}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{comment}{//\ default\ vec.w\ is\ 0}}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00254\ \}}
+\DoxyCodeLine{00255\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00256\ \textcolor{comment}{\ *\ Set\ a\ vectors\ magnitude\ to\ 1}}
+\DoxyCodeLine{00257\ \textcolor{comment}{\ *\ Note:\ This\ is\ NOT\ generating\ a\ normal\ vector}}
+\DoxyCodeLine{00258\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00259\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ Normalize(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00260\ \{}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{float}\ mag\ =\ Magnitude(v);\ \textcolor{comment}{//\ intermediate\ variable\ so\ we\ dont\ have\ to\ sqrt\ twice}}
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00263\ \ \ \ \ vec.x\ =\ v.x\ /\ mag;}
+\DoxyCodeLine{00264\ \ \ \ \ vec.y\ =\ v.y\ /\ mag;}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00266\ \}}
+\DoxyCodeLine{00267\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ *\ a\ x\ b\ (read:\ 'a\ crossed\ b')}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ *\ With\ a\ 3D\ vector\ we\ would\ yield\ another\ perpendicular\ cross\ product}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ *\ For\ 2D\ cross\ product,\ this\ will\ yield\ a\ scalar.}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ *\ You\ should\ write\ this\ to\ yield\ a\ scalar\ value.}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00273\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ CrossProduct(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b)}
+\DoxyCodeLine{00274\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{return}\ a.x\ *\ b.y\ +\ a.y\ *\ b.x;}
+\DoxyCodeLine{00276\ \}}
+\DoxyCodeLine{00277\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00278\ \textcolor{comment}{\ *\ Pretty\ print\ a\ vector}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ *\ std::ostream\&\ could\ be\ 'std::cout'\ for\ example'}}
+\DoxyCodeLine{00280\ \textcolor{comment}{\ *\ This\ function\ is\ primarily\ used\ for\ debugging\ purposes}}
+\DoxyCodeLine{00281\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00282\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PrettyPrint(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a)}
+\DoxyCodeLine{00283\ \{}
+\DoxyCodeLine{00284\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}x\ \ :\ "{}}\ <<\ a.x\ <<\ std::endl;}
+\DoxyCodeLine{00285\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}y\ \ :\ "{}}\ <<\ a.y\ <<\ std::endl;}
+\DoxyCodeLine{00286\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}(w):\ "{}}\ <<\ a.w\ <<\ std::endl;}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00288\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00289\ \textcolor{comment}{\ *\ Matrix\ 3D\ represents\ 3x3\ matrices\ in\ Math}}
+\DoxyCodeLine{00290\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00291\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMatrix3D}{Matrix3D}}}
+\DoxyCodeLine{00292\ \{}
+\DoxyCodeLine{00293\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{float}\ n[3][3];\ \textcolor{comment}{//\ Store\ each\ value\ of\ the\ matrix}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//\ Initializes\ to\ a\ identity\ matrix\ by\ default}}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}()}
+\DoxyCodeLine{00299\ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ n[0][0]\ =\ 1;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ n[0][1]\ =\ 0;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ n[0][2]\ =\ 0;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ n[1][0]\ =\ 0;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ n[1][1]\ =\ 1;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ n[1][2]\ =\ 0;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ n[2][0]\ =\ 0;}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ n[2][1]\ =\ 0;}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ n[2][2]\ =\ 1;}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{comment}{//\ Matrix\ constructor\ with\ 9\ scalar\ values.}}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}(\textcolor{keywordtype}{float}\ n00,\ \textcolor{keywordtype}{float}\ n01,\ \textcolor{keywordtype}{float}\ n02,}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ n10,\ \textcolor{keywordtype}{float}\ n11,\ \textcolor{keywordtype}{float}\ n12,}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ n20,\ \textcolor{keywordtype}{float}\ n21,\ \textcolor{keywordtype}{float}\ n22)}
+\DoxyCodeLine{00315\ \ \ \ \ \{}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ n[0][0]\ =\ n00;}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ n[0][1]\ =\ n10;}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ n[0][2]\ =\ n20;}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ n[1][0]\ =\ n01;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ n[1][1]\ =\ n11;}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ n[1][2]\ =\ n21;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ n[2][0]\ =\ n02;}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ n[2][1]\ =\ n12;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ n[2][2]\ =\ n22;}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{comment}{//\ Matrix\ constructor\ from\ three\ vectors.}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&b,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&c)}
+\DoxyCodeLine{00330\ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ n[0][0]\ =\ a.x;}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ n[0][1]\ =\ a.y;}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ n[0][2]\ =\ a.w;}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ n[1][0]\ =\ b.x;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ n[1][1]\ =\ b.y;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ n[1][2]\ =\ b.w;}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ n[2][0]\ =\ c.x;}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ n[2][1]\ =\ c.y;}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ n[2][2]\ =\ c.w;}
+\DoxyCodeLine{00340\ \ \ \ \ \}}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{comment}{//\ Index\ operator\ with\ two\ dimensions}}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{comment}{//\ Example:\ M(1,1)\ returns\ row\ 1\ and\ column\ 1\ of\ matrix\ M.}}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \&operator()(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)}
+\DoxyCodeLine{00345\ \ \ \ \ \{}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (n[j][i]);}
+\DoxyCodeLine{00347\ \ \ \ \ \}}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{comment}{//\ Index\ operator\ with\ two\ dimensions}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{comment}{//\ Example:\ M(1,1)\ returns\ row\ 1\ and\ column\ 1\ of\ matrix\ M.}}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&operator()(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00352\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (n[j][i]);}
+\DoxyCodeLine{00354\ \ \ \ \ \}}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{comment}{//\ Return\ a\ row\ from\ a\ matrix\ as\ a\ vector.}}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator[](\textcolor{keywordtype}{int}\ j)}
+\DoxyCodeLine{00358\ \ \ \ \ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{structVec2D}{Vec2D}}\ *\textcolor{keyword}{>}(n[j]));}
+\DoxyCodeLine{00360\ \ \ \ \ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{comment}{//\ Return\ a\ row\ from\ a\ matrix\ as\ a\ vector.}}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&operator[](\textcolor{keywordtype}{int}\ j)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00364\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{structVec2D}{Vec2D}}\ *\textcolor{keyword}{>}(n[j]));}
+\DoxyCodeLine{00366\ \ \ \ \ \}}
+\DoxyCodeLine{00367\ \};}
+\DoxyCodeLine{00368\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00369\ \textcolor{comment}{\ *\ Matrix\ Multiplication}}
+\DoxyCodeLine{00370\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00371\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ \&A,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ \&B)}
+\DoxyCodeLine{00372\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ result;}
+\DoxyCodeLine{00374\ \ \ \ \ result(0,\ 0)\ =\ A(0,\ 0)\ *\ B(0,\ 0)\ +\ A(0,\ 1)\ *\ B(1,\ 0)\ +\ A(0,\ 2)\ *\ B(2,\ 0);}
+\DoxyCodeLine{00375\ \ \ \ \ result(0,\ 1)\ =\ A(0,\ 0)\ *\ B(0,\ 1)\ +\ A(0,\ 1)\ *\ B(1,\ 1)\ +\ A(0,\ 2)\ *\ B(2,\ 1);}
+\DoxyCodeLine{00376\ \ \ \ \ result(0,\ 2)\ =\ A(0,\ 0)\ *\ B(0,\ 2)\ +\ A(0,\ 1)\ *\ B(1,\ 2)\ +\ A(0,\ 2)\ *\ B(2,\ 2);}
+\DoxyCodeLine{00377\ \ \ \ \ result(1,\ 0)\ =\ A(1,\ 0)\ *\ B(0,\ 0)\ +\ A(1,\ 1)\ *\ B(1,\ 0)\ +\ A(1,\ 2)\ *\ B(2,\ 0);}
+\DoxyCodeLine{00378\ \ \ \ \ result(1,\ 1)\ =\ A(1,\ 0)\ *\ B(0,\ 1)\ +\ A(1,\ 1)\ *\ B(1,\ 1)\ +\ A(1,\ 2)\ *\ B(2,\ 1);}
+\DoxyCodeLine{00379\ \ \ \ \ result(1,\ 2)\ =\ A(1,\ 0)\ *\ B(0,\ 2)\ +\ A(1,\ 1)\ *\ B(1,\ 2)\ +\ A(1,\ 2)\ *\ B(2,\ 2);}
+\DoxyCodeLine{00380\ \ \ \ \ result(2,\ 0)\ =\ A(2,\ 0)\ *\ B(0,\ 0)\ +\ A(2,\ 1)\ *\ B(1,\ 0)\ +\ A(2,\ 2)\ *\ B(2,\ 0);}
+\DoxyCodeLine{00381\ \ \ \ \ result(2,\ 1)\ =\ A(2,\ 0)\ *\ B(0,\ 1)\ +\ A(2,\ 1)\ *\ B(1,\ 1)\ +\ A(2,\ 2)\ *\ B(2,\ 1);}
+\DoxyCodeLine{00382\ \ \ \ \ result(2,\ 2)\ =\ A(2,\ 0)\ *\ B(0,\ 2)\ +\ A(2,\ 1)\ *\ B(1,\ 2)\ +\ A(2,\ 2)\ *\ B(2,\ 2);}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00384\ \}}
+\DoxyCodeLine{00385\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00386\ \textcolor{comment}{\ *\ Matrix\ multiply\ by\ a\ vector}}
+\DoxyCodeLine{00387\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00388\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ operator*(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ \&M,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \&v)}
+\DoxyCodeLine{00389\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{comment}{//\ going\ to\ treat\ v\ as\ [x,y,w]\ and\ just\ ignore\ 3rd\ component\ of\ result}}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ vec;}
+\DoxyCodeLine{00392\ \ \ \ \ vec.x\ =\ M(0,\ 0)\ *\ v.x\ +\ M(0,\ 1)\ *\ v.y\ +\ M(0,\ 2)\ *\ v.w;}
+\DoxyCodeLine{00393\ \ \ \ \ vec.y\ =\ M(1,\ 0)\ *\ v.x\ +\ M(1,\ 1)\ *\ v.y\ +\ M(1,\ 2)\ *\ v.w;}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{comment}{//\ default\ vec.w\ is\ 0}}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordflow}{return}\ vec;}
+\DoxyCodeLine{00396\ \}}
+\DoxyCodeLine{00402\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ PrettyPrint(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix3D}{Matrix3D}}\ \&a)}
+\DoxyCodeLine{00403\ \{}
+\DoxyCodeLine{00404\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ a(0,\ 0)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(0,\ 1)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(0,\ 2)\ <<\ std::endl;}
+\DoxyCodeLine{00405\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ a(1,\ 0)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(1,\ 1)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(1,\ 2)\ <<\ std::endl;}
+\DoxyCodeLine{00406\ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ a(2,\ 0)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(2,\ 1)\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ a(2,\ 2)\ <<\ \textcolor{stringliteral}{"{}]"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00407\ \}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

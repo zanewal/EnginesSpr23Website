@@ -1,0 +1,67 @@
+\hypertarget{classComponentFactory}{}\doxysection{Component\+Factory Class Reference}
+\label{classComponentFactory}\index{ComponentFactory@{ComponentFactory}}
+
+
+A component factory that create component based on different variable.  
+
+
+
+
+{\ttfamily \#include $<$Component\+Factory.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classComponent}{Component}} $\ast$ \mbox{\hyperlink{classComponentFactory_a148068709aea2341c4bd11935fba3e5a}{Create\+Component}} (json component\+Data)
+\begin{DoxyCompactList}\small\item\em Construct component based on the json. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classComponent}{Component}} $\ast$ \mbox{\hyperlink{classComponentFactory_a1d0ad5a5c67412fff29d30faf5e854ea}{Init\+Simple\+Component}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Construct a new simple component with default values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A component factory that create component based on different variable. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classComponentFactory_a148068709aea2341c4bd11935fba3e5a}\label{classComponentFactory_a148068709aea2341c4bd11935fba3e5a}} 
+\index{ComponentFactory@{ComponentFactory}!CreateComponent@{CreateComponent}}
+\index{CreateComponent@{CreateComponent}!ComponentFactory@{ComponentFactory}}
+\doxysubsubsection{\texorpdfstring{CreateComponent()}{CreateComponent()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classComponent}{Component}} $\ast$ Component\+Factory\+::\+Create\+Component (\begin{DoxyParamCaption}\item[{json}]{component\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Construct component based on the json. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component\+Data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classComponentFactory_a1d0ad5a5c67412fff29d30faf5e854ea}\label{classComponentFactory_a1d0ad5a5c67412fff29d30faf5e854ea}} 
+\index{ComponentFactory@{ComponentFactory}!InitSimpleComponent@{InitSimpleComponent}}
+\index{InitSimpleComponent@{InitSimpleComponent}!ComponentFactory@{ComponentFactory}}
+\doxysubsubsection{\texorpdfstring{InitSimpleComponent()}{InitSimpleComponent()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classComponent}{Component}} $\ast$ Component\+Factory\+::\+Init\+Simple\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Construct a new simple component with default values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & the type of the component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classComponent}{Component}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Component\+Factory.\+hpp\end{DoxyCompactItemize}

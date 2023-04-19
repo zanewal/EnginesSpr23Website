@@ -1,0 +1,50 @@
+\hypertarget{ColliderComponent_8hpp_source}{}\doxysection{Collider\+Component.\+hpp}
+\label{ColliderComponent_8hpp_source}\index{include/Components/ColliderComponent.hpp@{include/Components/ColliderComponent.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLLIDERCOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLLIDERCOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpriteComponent}{SpriteComponent}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{typedef}\ std::function<void(\mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *,\ \mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *)>\ CollisionEvent;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classColliderComponent_a881902a4586b64d363793a028339d1b7}{ColliderComponent}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classColliderComponent_a53fcb895f0fc47566de1348264f32a4c}{ColliderComponent}}(\textcolor{keywordtype}{float}\ aa,\ \textcolor{keywordtype}{float}\ bb);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classColliderComponent_a9d42b9ad8770ab829a05907134b7cbd2}{ColliderComponent}}(json\ j);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ json\ \mbox{\hyperlink{classColliderComponent_a4f881bc553cf3748cdad25e3a0b1f3be}{ToJson}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColliderComponent_a39b9eac166f15b56e156cf03c7abe98d}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColliderComponent_a472650a61f0ff6cbfd43476a85fee898}{Move}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ dst,\ \mbox{\hyperlink{classScene}{Scene}}\ *scene);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *\mbox{\hyperlink{classColliderComponent_a8b060803e2f39a43d9e853184001769e}{CheckCollision}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ dst,\ \mbox{\hyperlink{classScene}{Scene}}\ *scene);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classColliderComponent_a57afa35ae50b3daf8978b117c1ead767}{GetPenetration}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ dst,\ \mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *other);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classColliderComponent_ac0db93e61a4f81ec0c59f7515021408d}{Overlap}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ pos,\ \mbox{\hyperlink{structVec2D}{Vec2D}}\ aabb,\ \mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *other);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classColliderComponent_a1b07caefe7bba710bbb870a98e7adc81}{GetCollisionBox}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classColliderComponent_a14dd11fd158e8c58dd5a4eb3c7d46cdc}{GetPosition}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColliderComponent_add1a0b9775e2cef7b8a5ee4a92a36464}{SetCollisionBox}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ newBox);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classColliderComponent_a86b7feb57493e2960c835b3a935f94b7}{StopCollision}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ std::vector<ColliderComponent\ *>\ \mbox{\hyperlink{classColliderComponent_a0c88f9ce2365243d63b22536ebdf7d2a}{GetCollidedObjects}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ std::vector<ColliderComponent\ *>\ collidedObjects;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ collisionBox;}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classSpriteComponent}{SpriteComponent}}\ *transform;}
+\DoxyCodeLine{00089\ \ \ \ \ std::vector<CollisionEvent>\ collisionEvents;}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

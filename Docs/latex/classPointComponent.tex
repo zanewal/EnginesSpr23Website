@@ -1,0 +1,156 @@
+\hypertarget{classPointComponent}{}\doxysection{Point\+Component Class Reference}
+\label{classPointComponent}\index{PointComponent@{PointComponent}}
+
+
+{\ttfamily \#include $<$Point\+Component.\+hpp$>$}
+
+Inheritance diagram for Point\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPointComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPointComponent_aa24fade09d08e56a05e122218cec4660}\label{classPointComponent_aa24fade09d08e56a05e122218cec4660}} 
+{\bfseries Point\+Component} (json j)
+\item 
+json \mbox{\hyperlink{classPointComponent_a34bdbe9abb3fc19704602ced75463795}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPointComponent_ac7678f3c703e49cb4016e433d317bcc4}{Render}} (SDL\+\_\+\+Renderer $\ast$ren) override
+\begin{DoxyCompactList}\small\item\em Render the point onto the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPointComponent_adb3f471a659947b44a41b79bc129f0ee}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine) override
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPointComponent_afac3fb75d0af9e97e373931815ac82f3}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time) override
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPointComponent_a7cfe29d2525729c529d0f488775ab68e}\label{classPointComponent_a7cfe29d2525729c529d0f488775ab68e}} 
+void {\bfseries Lose\+Point} (int point)
+\item 
+\mbox{\Hypertarget{classPointComponent_a589612a6ab1d0ca15ee5abd1da4deb59}\label{classPointComponent_a589612a6ab1d0ca15ee5abd1da4deb59}} 
+void {\bfseries Gain\+Point} (int point)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classPointComponent}{Point\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} that record the point and display them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPointComponent_ac7678f3c703e49cb4016e433d317bcc4}\label{classPointComponent_ac7678f3c703e49cb4016e433d317bcc4}} 
+\index{PointComponent@{PointComponent}!Render@{Render}}
+\index{Render@{Render}!PointComponent@{PointComponent}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Point\+Component\+::\+Render (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render the point onto the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ren} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Component}}.
+
+\mbox{\Hypertarget{classPointComponent_adb3f471a659947b44a41b79bc129f0ee}\label{classPointComponent_adb3f471a659947b44a41b79bc129f0ee}} 
+\index{PointComponent@{PointComponent}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!PointComponent@{PointComponent}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily virtual void Point\+Component\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+starting up the component, linking the dependency 
+
+
+\begin{DoxyParams}{Parameters}
+{\em engine} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Component}}.
+
+\mbox{\Hypertarget{classPointComponent_a34bdbe9abb3fc19704602ced75463795}\label{classPointComponent_a34bdbe9abb3fc19704602ced75463795}} 
+\index{PointComponent@{PointComponent}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!PointComponent@{PointComponent}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Point\+Component\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+turn the component into a json 
+
+\begin{DoxyReturn}{Returns}
+json 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{Component}}.
+
+\mbox{\Hypertarget{classPointComponent_afac3fb75d0af9e97e373931815ac82f3}\label{classPointComponent_afac3fb75d0af9e97e373931815ac82f3}} 
+\index{PointComponent@{PointComponent}!Update@{Update}}
+\index{Update@{Update}!PointComponent@{PointComponent}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Point\+Component\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{object,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene,  }\item[{int}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+update the component 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & the index of the object in scene \\
+\hline
+{\em scene} & \\
+\hline
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Point\+Component.\+hpp\end{DoxyCompactItemize}

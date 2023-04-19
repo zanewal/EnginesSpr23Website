@@ -1,0 +1,47 @@
+\hypertarget{TileMapComponent_8hpp_source}{}\doxysection{Tile\+Map\+Component.\+hpp}
+\label{TileMapComponent_8hpp_source}\index{include/Components/TileMapComponent.hpp@{include/Components/TileMapComponent.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TILEMAPCOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TILEMAPCOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceManager}{ResourceManager}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTileMapComponent}{TileMapComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classTileMapComponent_ac4691ecf844fa8fe077ab5a56663861d}{TileMapComponent}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classTileMapComponent_a3d8289074c6943aee6194df04a28cd5b}{\string~TileMapComponent}}();}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classTileMapComponent}{TileMapComponent}}\ *\mbox{\hyperlink{classTileMapComponent_ae1f83d88314f3d55d2a749d77db42d0c}{StartUp}}(std::string\ tileSheetFilePath,\ \textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols,\ \textcolor{keywordtype}{int}\ \_TileWidth,\ \textcolor{keywordtype}{int}\ \_TileHeight,\ \textcolor{keywordtype}{int}\ \_mapX,\ \textcolor{keywordtype}{int}\ \_mapY,\ SDL\_Renderer\ *ren);}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTileMapComponent_a05e27ac1fa482351130108259ea37942}{ShutDown}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTileMapComponent_abda1e3f6a76380b3628e69f33ad730bc}{GenerateSimpleMap}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTileMapComponent_ad74bd890fb494d89958b4bc67686bdc6}{PrintMap}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTileMapComponent_aa663981f62c649650617475c2d2e03e3}{SetTile}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ type);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTileMapComponent_adb24ff5494a792ccefb9b2cf95bc9f28}{GetTileType}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTileMapComponent_ae047a76b8d2a3e052b97d2db6bbd9a87}{Render}}(SDL\_Renderer\ *ren)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ Dimensions\ of\ our\ TileMap\ and\ individual\ tiles.}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ Used\ for\ splitting\ up\ the\ sprite\ sheet}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_Rows;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_Cols;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ How\ big\ each\ tile\ is.}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_TileWidth;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_TileHeight;}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ size\ of\ our\ tilemap}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_MapX;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ m\_MapY;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{//\ Where\ our\ TileMap\ is\ rendered}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ An\ SDL\ Surface\ contains\ pixel\ data\ to\ draw\ our\ TileMap}}
+\DoxyCodeLine{00071\ \ \ \ \ SDL\_Surface\ *m\_TileSpriteSheet;}
+\DoxyCodeLine{00072\ \ \ \ \ SDL\_Texture\ *m\_Texture;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Stores\ our\ tile\ types}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{int}\ *m\_Tiles;}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

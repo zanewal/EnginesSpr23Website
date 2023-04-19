@@ -1,0 +1,280 @@
+\hypertarget{classScene}{}\doxysection{Scene Class Reference}
+\label{classScene}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScene_a6fb788d6ae25d5293d3a58966cf29757}{Scene}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Construct a new scene with a name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classScene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene}} ()
+\item 
+\mbox{\hyperlink{classScene_a97f9d36d4caa6cbd2a3f507352ef86d4}{Scene}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classScene}{Scene}} object from json. \end{DoxyCompactList}\item 
+json \mbox{\hyperlink{classScene_ac646a28abcea0d5819b9da09e7e69410}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the scene into a json, use in saving \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_ad1b258ae41537cc7faf423b9cfc932b3}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em start up all its child game objects \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a3c9841b469f424d6bb70f40836747481}{Shut\+Down}} ()
+\item 
+void \mbox{\hyperlink{classScene_ae42ca4e5c27a78f0ad783b3103c31c54}{Process\+Input}} (SDL\+\_\+\+Event $\ast$s)
+\item 
+void \mbox{\hyperlink{classScene_a2e6196ca7e696405908f187c675c56bb}{Update}} (int delta\+Time)
+\item 
+void \mbox{\hyperlink{classScene_aa5e4c76cda5ff23a580dce65054dcd62}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\item 
+int \mbox{\hyperlink{classScene_ab498acc44064102437fdc35712ac1852}{Add\+Object}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Adds a \mbox{\hyperlink{classGameObject}{Game\+Object}} to the end of the list. This \mbox{\hyperlink{classGameObject}{Game\+Object}} should be Start\+Up later. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classScene_a9025d9b477c119ddbb04be443420ed4e}{Add\+Object}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$obj, int index)
+\begin{DoxyCompactList}\small\item\em replace a the game object og the given index \end{DoxyCompactList}\item 
+std\+::map$<$ int, \mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ $>$ \mbox{\hyperlink{classScene_ad31945895517cfc29f1867b3edb91e44}{Get\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Get all game Objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScene_afa7ed190539c41375959a5d3a3cc3fe1}\label{classScene_afa7ed190539c41375959a5d3a3cc3fe1}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries Get\+Object} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the object with the given index. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classScene_acd4cb7187ea1d8ce7b0c0e8db48e190d}{Get\+Current\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current highest index of the object of the scene. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classScene_a6a56f73cc9f0fee150fce017b979aaa1}{Remove\+Object}} (int index)
+\begin{DoxyCompactList}\small\item\em Removes the object with index {\itshape index}. Decreases the size of the object vector by 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScene_a7a4764f4aeca820e39b5753531a86d74}\label{classScene_a7a4764f4aeca820e39b5753531a86d74}} 
+\mbox{\hyperlink{structVec2D}{Vec2D}} {\bfseries Get\+Camera\+Pos} ()
+\begin{DoxyCompactList}\small\item\em Gets the position of the scene\textquotesingle{}s camera as a \mbox{\hyperlink{structVec2D}{Vec2D}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_ad2bb8c0e8ca68a7c69c05dc9472a6031}{Move\+Camera}} (\mbox{\hyperlink{structVec2D}{Vec2D}} new\+Pos)
+\begin{DoxyCompactList}\small\item\em Sets a new position for the scene\textquotesingle{}s camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScene_a9e9a34dac332188ecf50165dc6f0af11}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the Name of the scene. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classScene_a888574f4eea5fae0674c1c3431cf9421}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the Name of the scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScene_abed0fac7354911ee972beac35f9d0361}\label{classScene_abed0fac7354911ee972beac35f9d0361}} 
+void {\bfseries Lose\+Point} (int point)
+\item 
+\mbox{\Hypertarget{classScene_ac760ab40db60234fd628e4d355f594e3}\label{classScene_ac760ab40db60234fd628e4d355f594e3}} 
+void {\bfseries Gain\+Point} (int point)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class defines a scene. A scene is a list of Game\+Objects, with a position representing the top-\/left of the camera. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScene_a6fb788d6ae25d5293d3a58966cf29757}\label{classScene_a6fb788d6ae25d5293d3a58966cf29757}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct a new scene with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a3b8cec2e32546713915f8c6303c951f1}\label{classScene_a3b8cec2e32546713915f8c6303c951f1}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor \mbox{\Hypertarget{classScene_a97f9d36d4caa6cbd2a3f507352ef86d4}\label{classScene_a97f9d36d4caa6cbd2a3f507352ef86d4}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}\item[{json}]{j }\end{DoxyParamCaption})}
+
+
+
+Construct a \mbox{\hyperlink{classScene}{Scene}} object from json. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & the json \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScene_ab498acc44064102437fdc35712ac1852}\label{classScene_ab498acc44064102437fdc35712ac1852}} 
+\index{Scene@{Scene}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Adds a \mbox{\hyperlink{classGameObject}{Game\+Object}} to the end of the list. This \mbox{\hyperlink{classGameObject}{Game\+Object}} should be Start\+Up later. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a9025d9b477c119ddbb04be443420ed4e}\label{classScene_a9025d9b477c119ddbb04be443420ed4e}} 
+\index{Scene@{Scene}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Scene\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$}]{obj,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+replace a the game object og the given index 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_acd4cb7187ea1d8ce7b0c0e8db48e190d}\label{classScene_acd4cb7187ea1d8ce7b0c0e8db48e190d}} 
+\index{Scene@{Scene}!GetCurrentIndex@{GetCurrentIndex}}
+\index{GetCurrentIndex@{GetCurrentIndex}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetCurrentIndex()}{GetCurrentIndex()}}
+{\footnotesize\ttfamily int Scene\+::\+Get\+Current\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current highest index of the object of the scene. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a888574f4eea5fae0674c1c3431cf9421}\label{classScene_a888574f4eea5fae0674c1c3431cf9421}} 
+\index{Scene@{Scene}!GetName@{GetName}}
+\index{GetName@{GetName}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Scene\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Name of the scene. 
+
+\begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_ad31945895517cfc29f1867b3edb91e44}\label{classScene_ad31945895517cfc29f1867b3edb91e44}} 
+\index{Scene@{Scene}!GetObjects@{GetObjects}}
+\index{GetObjects@{GetObjects}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GetObjects()}{GetObjects()}}
+{\footnotesize\ttfamily std\+::map$<$ int, \mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ $>$ Scene\+::\+Get\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all game Objects. 
+
+\begin{DoxyReturn}{Returns}
+a map containing the object ptrs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_ad2bb8c0e8ca68a7c69c05dc9472a6031}\label{classScene_ad2bb8c0e8ca68a7c69c05dc9472a6031}} 
+\index{Scene@{Scene}!MoveCamera@{MoveCamera}}
+\index{MoveCamera@{MoveCamera}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{MoveCamera()}{MoveCamera()}}
+{\footnotesize\ttfamily void Scene\+::\+Move\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{new\+Pos }\end{DoxyParamCaption})}
+
+
+
+Sets a new position for the scene\textquotesingle{}s camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Pos} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_ae42ca4e5c27a78f0ad783b3103c31c54}\label{classScene_ae42ca4e5c27a78f0ad783b3103c31c54}} 
+\index{Scene@{Scene}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily void Scene\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Event $\ast$}]{s }\end{DoxyParamCaption})}
+
+Process an input. A scene sends the input to all Game\+Objects in the scene. \mbox{\Hypertarget{classScene_a6a56f73cc9f0fee150fce017b979aaa1}\label{classScene_a6a56f73cc9f0fee150fce017b979aaa1}} 
+\index{Scene@{Scene}!RemoveObject@{RemoveObject}}
+\index{RemoveObject@{RemoveObject}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{RemoveObject()}{RemoveObject()}}
+{\footnotesize\ttfamily std\+::string Scene\+::\+Remove\+Object (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes the object with index {\itshape index}. Decreases the size of the object vector by 1. 
+
+\mbox{\Hypertarget{classScene_aa5e4c76cda5ff23a580dce65054dcd62}\label{classScene_aa5e4c76cda5ff23a580dce65054dcd62}} 
+\index{Scene@{Scene}!Render@{Render}}
+\index{Render@{Render}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void Scene\+::\+Render (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})}
+
+Per frame render. Renders everything \mbox{\Hypertarget{classScene_a9e9a34dac332188ecf50165dc6f0af11}\label{classScene_a9e9a34dac332188ecf50165dc6f0af11}} 
+\index{Scene@{Scene}!SetName@{SetName}}
+\index{SetName@{SetName}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Scene\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the Name of the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScene_a3c9841b469f424d6bb70f40836747481}\label{classScene_a3c9841b469f424d6bb70f40836747481}} 
+\index{Scene@{Scene}!ShutDown@{ShutDown}}
+\index{ShutDown@{ShutDown}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ShutDown()}{ShutDown()}}
+{\footnotesize\ttfamily void Scene\+::\+Shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Free allocated resources \mbox{\Hypertarget{classScene_ad1b258ae41537cc7faf423b9cfc932b3}\label{classScene_ad1b258ae41537cc7faf423b9cfc932b3}} 
+\index{Scene@{Scene}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily void Scene\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})}
+
+
+
+start up all its child game objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em engine} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_ac646a28abcea0d5819b9da09e7e69410}\label{classScene_ac646a28abcea0d5819b9da09e7e69410}} 
+\index{Scene@{Scene}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Scene\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+turn the scene into a json, use in saving 
+
+\begin{DoxyReturn}{Returns}
+json 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScene_a2e6196ca7e696405908f187c675c56bb}\label{classScene_a2e6196ca7e696405908f187c675c56bb}} 
+\index{Scene@{Scene}!Update@{Update}}
+\index{Update@{Update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Scene\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{delta\+Time }\end{DoxyParamCaption})}
+
+Update logic handling delta\+Time is time between updates in ms 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Scene.\+hpp\end{DoxyCompactItemize}

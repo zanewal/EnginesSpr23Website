@@ -1,0 +1,85 @@
+\hypertarget{Scene_8hpp_source}{}\doxysection{Scene.\+hpp}
+\label{Scene_8hpp_source}\index{include/Scene.hpp@{include/Scene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ defined(LINUX)\ ||\ defined(MINGW)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}TinyMath.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <nlohmann/json.hpp>}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ }json\ =\ nlohmann::json;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameObject}{GameObject}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEngine}{Engine}};}
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScene}{Scene}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{classScene_a6fb788d6ae25d5293d3a58966cf29757}{Scene}}(std::string\ name);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classScene_a3b8cec2e32546713915f8c6303c951f1}{\string~Scene}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{classScene_a97f9d36d4caa6cbd2a3f507352ef86d4}{Scene}}(json\ j);}
+\DoxyCodeLine{00051\ \ \ \ \ json\ \mbox{\hyperlink{classScene_ac646a28abcea0d5819b9da09e7e69410}{ToJson}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_ad1b258ae41537cc7faf423b9cfc932b3}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a3c9841b469f424d6bb70f40836747481}{ShutDown}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_ae42ca4e5c27a78f0ad783b3103c31c54}{ProcessInput}}(SDL\_Event\ *s);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a2e6196ca7e696405908f187c675c56bb}{Update}}(\textcolor{keywordtype}{int}\ deltaTime);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_aa5e4c76cda5ff23a580dce65054dcd62}{Render}}(SDL\_Renderer\ *ren);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classScene_ab498acc44064102437fdc35712ac1852}{AddObject}}(\mbox{\hyperlink{classGameObject}{GameObject}}\ *obj);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classScene_a9025d9b477c119ddbb04be443420ed4e}{AddObject}}(\mbox{\hyperlink{classGameObject}{GameObject}}\ *obj,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \ \ \ \ std::map<int,\ GameObject\ *>\ \mbox{\hyperlink{classScene_ad31945895517cfc29f1867b3edb91e44}{GetObjects}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{classGameObject}{GameObject}}\ *\mbox{\hyperlink{classScene_afa7ed190539c41375959a5d3a3cc3fe1}{GetObject}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classScene_acd4cb7187ea1d8ce7b0c0e8db48e190d}{GetCurrentIndex}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ std::string\ \mbox{\hyperlink{classScene_a6a56f73cc9f0fee150fce017b979aaa1}{RemoveObject}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ \mbox{\hyperlink{classScene_a7a4764f4aeca820e39b5753531a86d74}{GetCameraPos}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_ad2bb8c0e8ca68a7c69c05dc9472a6031}{MoveCamera}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ newPos);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classScene_a9e9a34dac332188ecf50165dc6f0af11}{SetName}}(std::string\ name);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::string\ \mbox{\hyperlink{classScene_a888574f4eea5fae0674c1c3431cf9421}{GetName}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ LosePoint(\textcolor{keywordtype}{int}\ point);}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ GainPoint(\textcolor{keywordtype}{int}\ point);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00156\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{int}\ currentIndex;}
+\DoxyCodeLine{00158\ \ \ \ \ std::map<int,\ GameObject\ *>\ objects;}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ camera;\ \textcolor{comment}{//\ represents\ top\ left\ pos\ of\ camera}}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{comment}{//\ for\ score\ display}}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ startPoint;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ currentPoint;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ winCondition;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{int}\ loseCondition;}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{int}\ fontSize;}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{int}\ scoreWidth;}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{int}\ scoreHeight;}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{structVec2D}{Vec2D}}\ scorePosition;}
+\DoxyCodeLine{00169\ \ \ \ \ TTF\_Font\ *font;}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{classEngine}{Engine}}\ *gameEngine;}
+\DoxyCodeLine{00171\ \ \ \ \ SDL\_Surface\ *surface\{\};}
+\DoxyCodeLine{00172\ \ \ \ \ SDL\_Texture\ *texture\{\};}
+\DoxyCodeLine{00173\ \ \ \ \ SDL\_Rect\ rect\{\};}
+\DoxyCodeLine{00174\ \};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

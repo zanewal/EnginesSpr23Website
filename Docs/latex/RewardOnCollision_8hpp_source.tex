@@ -1,0 +1,34 @@
+\hypertarget{RewardOnCollision_8hpp_source}{}\doxysection{Reward\+On\+Collision.\+hpp}
+\label{RewardOnCollision_8hpp_source}\index{include/Components/RewardOnCollision.hpp@{include/Components/RewardOnCollision.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REWARDONCOLLISION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REWARDONCOLLISION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColliderComponent}{ColliderComponent}};}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPointComponent}{PointComponent}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRewardOnCollision}{RewardOnCollision}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classRewardOnCollision_a541e557877eaf8d00eec2395ae1ddbaa}{RewardOnCollision}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{classRewardOnCollision_a63e7d15d3f7c871c313f363925fd7985}{RewardOnCollision}}(json\ j);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRewardOnCollision_af75e01f0641185ba579ed5e3037edadf}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ json\ \mbox{\hyperlink{classRewardOnCollision_a4b1fa0907dbb3bb766256677364c792d}{ToJson}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRewardOnCollision_a599096d4eef4467c2cd7ad48c539986a}{Update}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{object},\ \mbox{\hyperlink{classScene}{Scene}}\ *scene,\ \textcolor{keywordtype}{int}\ deltaTime);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classPointComponent}{PointComponent}}\ *point;}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classColliderComponent}{ColliderComponent}}\ *collider;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ reward;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

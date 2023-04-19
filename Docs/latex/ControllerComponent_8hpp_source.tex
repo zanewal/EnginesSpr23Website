@@ -1,0 +1,43 @@
+\hypertarget{ControllerComponent_8hpp_source}{}\doxysection{Controller\+Component.\+hpp}
+\label{ControllerComponent_8hpp_source}\index{include/Components/ControllerComponent.hpp@{include/Components/ControllerComponent.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONTROLLERCOMPONENT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONTROLLERCOMPONENT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Component.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpriteComponent}{SpriteComponent}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classControllerComponent}{ControllerComponent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classComponent}{Component}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classControllerComponent_a35d8c1e90ac58d97e2f0d1e6121cbf32}{ControllerComponent}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{classControllerComponent_afe95d7abd30e5f6df3257db71659eb1a}{ControllerComponent}}(json\ j);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ json\ \mbox{\hyperlink{classControllerComponent_ad0468ed9314e4ca2b29c4c1315b65a75}{ToJson}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControllerComponent_aa8535564c3d6413cc8a425964a60b9e7}{StartUp}}(\mbox{\hyperlink{classEngine}{Engine}}\ *engine)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControllerComponent_a545c8680f1fe49a6bd6bea40b91e15b6}{ProcessInput}}(SDL\_Event\ *s)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControllerComponent_a8778c495f9c7fe64f2fa6a5498202531}{Update}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{object},\ \mbox{\hyperlink{classScene}{Scene}}\ *scene,\ \textcolor{keywordtype}{int}\ deltaTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControllerComponent_ae1d99d086dde89bd39e463ff08340bb8}{Move}}(\mbox{\hyperlink{structVec2D}{Vec2D}}\ direction,\ \mbox{\hyperlink{classGameObject}{GameObject}}\ *\textcolor{keywordtype}{object},\ \mbox{\hyperlink{classScene}{Scene}}\ *scene);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ keys[4];}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classSpriteComponent}{SpriteComponent}}\ *transform;}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum}\ ControllerKeys}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ UP\ =\ 0,}
+\DoxyCodeLine{00062\ \ \ \ \ DOWN\ =\ 1,}
+\DoxyCodeLine{00063\ \ \ \ \ LEFT\ =\ 2,}
+\DoxyCodeLine{00064\ \ \ \ \ RIGHT\ =\ 3,}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

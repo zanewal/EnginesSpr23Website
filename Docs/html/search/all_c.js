@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['saveactivescene_0',['SaveActiveScene',['../classEngine.html#a3cac08d58ea6f45d68aa99b762287af0',1,'Engine']]],
+  ['scene_1',['Scene',['../classScene.html',1,'Scene'],['../classScene.html#a6fb788d6ae25d5293d3a58966cf29757',1,'Scene::Scene(std::string name)'],['../classScene.html#a97f9d36d4caa6cbd2a3f507352ef86d4',1,'Scene::Scene(json j)']]],
+  ['sdlgraphicsenginerenderer_2',['SDLGraphicsEngineRenderer',['../classSDLGraphicsEngineRenderer.html',1,'SDLGraphicsEngineRenderer'],['../classSDLGraphicsEngineRenderer.html#afafd7dde79129ee3f0a31a855488af1a',1,'SDLGraphicsEngineRenderer::SDLGraphicsEngineRenderer()']]],
+  ['setcollisionbox_3',['SetCollisionBox',['../classColliderComponent.html#add1a0b9775e2cef7b8a5ee4a92a36464',1,'ColliderComponent']]],
+  ['setname_4',['SetName',['../classGameObject.html#a5cbd59eb3fd5c0a0600e1879d60236a4',1,'GameObject::SetName()'],['../classScene.html#a9e9a34dac332188ecf50165dc6f0af11',1,'Scene::SetName()']]],
+  ['setobjectname_5',['SetObjectName',['../classEngine.html#ac8a2e22d7a769547941d3a9ab2fd2ccb',1,'Engine']]],
+  ['setobjectposition_6',['SetObjectPosition',['../classEngine.html#a0a96d8124421fd011534be0afc051174',1,'Engine']]],
+  ['setparent_7',['SetParent',['../classComponent.html#a897607c237122cc99121500391b946d4',1,'Component::SetParent()'],['../classGameObject.html#af12ae9074c969daf5ccb0d8baaea3793',1,'GameObject::SetParent()']]],
+  ['setposition_8',['SetPosition',['../classSpriteComponent.html#ada7a69b50c12f7255e6241158245508d',1,'SpriteComponent']]],
+  ['setrenderdrawcolor_9',['SetRenderDrawColor',['../classIGraphicsEngineRenderer.html#acf62a15fc0e1c52356b09c57e2628529',1,'IGraphicsEngineRenderer::SetRenderDrawColor()'],['../classSDLGraphicsEngineRenderer.html#a91b29bf19986c6ad8710238778312277',1,'SDLGraphicsEngineRenderer::SetRenderDrawColor()']]],
+  ['setrotation_10',['SetRotation',['../classSpriteComponent.html#a283c0fd1f6bb68b68f37debe6de61bdb',1,'SpriteComponent']]],
+  ['setscale_11',['SetScale',['../classSpriteComponent.html#af0d9b894f728609bcc5abe4e2e5ce4b2',1,'SpriteComponent']]],
+  ['setscenename_12',['SetSceneName',['../classEngine.html#ab2db6b44366ed98511e4e417417a57ac',1,'Engine']]],
+  ['settile_13',['SetTile',['../classTileMapComponent.html#aa663981f62c649650617475c2d2e03e3',1,'TileMapComponent']]],
+  ['shouldquit_14',['ShouldQuit',['../classEngine.html#addc4f7e07e72ed790a994e1e0b20879a',1,'Engine']]],
+  ['shutdown_15',['ShutDown',['../classComponent.html#a7081fe7b65f74447ebd065a7164c4b63',1,'Component::ShutDown()'],['../classSpriteComponent.html#a83b2daa33fd66f04a8d73700b0266751',1,'SpriteComponent::ShutDown()'],['../classTileMapComponent.html#a05e27ac1fa482351130108259ea37942',1,'TileMapComponent::ShutDown()'],['../classScene.html#a3c9841b469f424d6bb70f40836747481',1,'Scene::ShutDown()']]],
+  ['shutdown_16',['Shutdown',['../classGameObject.html#ac1f32e116be7bff9d7933963b8856601',1,'GameObject']]],
+  ['spritecomponent_17',['SpriteComponent',['../classSpriteComponent.html#a961f54a1999fba83e21c123d37a0540e',1,'SpriteComponent::SpriteComponent()'],['../classSpriteComponent.html',1,'SpriteComponent']]],
+  ['start_18',['Start',['../classEngine.html#a1fbe9f5cb4abc3572e432cae1f154817',1,'Engine']]],
+  ['startup_19',['StartUp',['../classControllerComponent.html#aa8535564c3d6413cc8a425964a60b9e7',1,'ControllerComponent::StartUp()'],['../classScene.html#ad1b258ae41537cc7faf423b9cfc932b3',1,'Scene::StartUp()'],['../classGameObject.html#a49b2d3217a9ea81afa25e7d9a9ad2232',1,'GameObject::StartUp()'],['../classTileMapComponent.html#ae1f83d88314f3d55d2a749d77db42d0c',1,'TileMapComponent::StartUp()'],['../classSpriteComponent.html#ae9faf31926d216faa3d981b5495a7bc3',1,'SpriteComponent::StartUp()'],['../classRewardOnCollision.html#af75e01f0641185ba579ed5e3037edadf',1,'RewardOnCollision::StartUp()'],['../classPointComponent.html#adb3f471a659947b44a41b79bc129f0ee',1,'PointComponent::StartUp()'],['../classDestroyOnCollision.html#ae77783360c753125f245df194248e627',1,'DestroyOnCollision::StartUp()'],['../classComponent.html#a8edf17be0f452fe5a6182bd68ed8f4e8',1,'Component::StartUp()'],['../classColliderComponent.html#a39b9eac166f15b56e156cf03c7abe98d',1,'ColliderComponent::StartUp()']]],
+  ['startwindow_20',['StartWindow',['../classSDLGraphicsEngineRenderer.html#a6726b9567c63efce88a4fe9303d80f7f',1,'SDLGraphicsEngineRenderer']]],
+  ['stop_21',['Stop',['../classEngine.html#a55059f0c0a33f3a84300a89ebd10b855',1,'Engine']]],
+  ['stopcollision_22',['StopCollision',['../classColliderComponent.html#a86b7feb57493e2960c835b3a935f94b7',1,'ColliderComponent']]]
+];

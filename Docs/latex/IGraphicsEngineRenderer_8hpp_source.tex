@@ -1,0 +1,61 @@
+\hypertarget{IGraphicsEngineRenderer_8hpp_source}{}\doxysection{IGraphics\+Engine\+Renderer.\+hpp}
+\label{IGraphicsEngineRenderer_8hpp_source}\index{include/IGraphicsEngineRenderer.hpp@{include/IGraphicsEngineRenderer.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRAPHICS\_ENGINE\_RENDERER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRAPHICS\_ENGINE\_RENDERER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#if\ defined(LINUX)\ ||\ defined(MINGW)}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <SDL2/SDL.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SDL.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <SDL\_ttf.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIGraphicsEngineRenderer}{IGraphicsEngineRenderer}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classIGraphicsEngineRenderer_a54ff623ea2317c506ade9be1fc1a53e6}{IGraphicsEngineRenderer}}()\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_a1b5219e8b718d38b4e54be31557eee17}{\string~IGraphicsEngineRenderer}}()\{\};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_acf62a15fc0e1c52356b09c57e2628529}{SetRenderDrawColor}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ g,\ \textcolor{keywordtype}{int}\ b,\ \textcolor{keywordtype}{int}\ a)\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_a33dc89efb652168680736dc4871df48e}{RenderClear}}()\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_aae42681e8163b9321b6b742c47365012}{RenderPresent}}()\ =\ 0;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_a8da661ff2c958a1851d56acf4b60f45d}{GetWindowWidth}}()}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mScreenWidth;}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIGraphicsEngineRenderer_a7883fa84b4aef306d9cda2bc3db173d6}{GetWindowHeight}}()}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ mScreenHeight;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Screen\ dimension\ constants}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ mScreenWidth\{0\};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ mScreenHeight\{0\};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSDLGraphicsEngineRenderer}{SDLGraphicsEngineRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIGraphicsEngineRenderer}{IGraphicsEngineRenderer}}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_afafd7dde79129ee3f0a31a855488af1a}{SDLGraphicsEngineRenderer}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a1420b7422b6cbaadae4490c554716117}{\string~SDLGraphicsEngineRenderer}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a91b29bf19986c6ad8710238778312277}{SetRenderDrawColor}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ g,\ \textcolor{keywordtype}{int}\ b,\ \textcolor{keywordtype}{int}\ a)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_ae6edfc67a39076c0c12101ad85be4f6a}{RenderClear}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_acddd7c456e4311d71fc1d43f29343d81}{RenderPresent}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSDLGraphicsEngineRenderer_a6726b9567c63efce88a4fe9303d80f7f}{StartWindow}}(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ SDL\_Window\ *\mbox{\hyperlink{classSDLGraphicsEngineRenderer_abd24deb029577fc237b47a3cbf30c121}{GetWindow}}();}
+\DoxyCodeLine{00105\ \ \ \ \ SDL\_Renderer\ *\mbox{\hyperlink{classSDLGraphicsEngineRenderer_a93e5f435d003933cf3304e44c5aa7324}{GetRenderer}}();}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//\ SDL\ Window}}
+\DoxyCodeLine{00109\ \ \ \ \ SDL\_Window\ *mWindow\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ SDL\ Renderer}}
+\DoxyCodeLine{00111\ \ \ \ \ SDL\_Renderer\ *mRenderer\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

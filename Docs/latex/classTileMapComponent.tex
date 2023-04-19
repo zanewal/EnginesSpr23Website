@@ -1,0 +1,144 @@
+\hypertarget{classTileMapComponent}{}\doxysection{Tile\+Map\+Component Class Reference}
+\label{classTileMapComponent}\index{TileMapComponent@{TileMapComponent}}
+
+
+{\ttfamily \#include $<$Tile\+Map\+Component.\+hpp$>$}
+
+Inheritance diagram for Tile\+Map\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTileMapComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTileMapComponent_ac4691ecf844fa8fe077ab5a56663861d}{Tile\+Map\+Component}} ()
+\item 
+\mbox{\hyperlink{classTileMapComponent_a3d8289074c6943aee6194df04a28cd5b}{$\sim$\+Tile\+Map\+Component}} ()
+\item 
+\mbox{\hyperlink{classTileMapComponent}{Tile\+Map\+Component}} $\ast$ \mbox{\hyperlink{classTileMapComponent_ae1f83d88314f3d55d2a749d77db42d0c}{Start\+Up}} (std\+::string tile\+Sheet\+File\+Path, int rows, int cols, int \+\_\+\+Tile\+Width, int \+\_\+\+Tile\+Height, int \+\_\+mapX, int \+\_\+mapY, SDL\+\_\+\+Renderer $\ast$ren)
+\item 
+virtual void \mbox{\hyperlink{classTileMapComponent_a05e27ac1fa482351130108259ea37942}{Shut\+Down}} ()
+\item 
+void \mbox{\hyperlink{classTileMapComponent_abda1e3f6a76380b3628e69f33ad730bc}{Generate\+Simple\+Map}} ()
+\item 
+void \mbox{\hyperlink{classTileMapComponent_ad74bd890fb494d89958b4bc67686bdc6}{Print\+Map}} ()
+\item 
+void \mbox{\hyperlink{classTileMapComponent_aa663981f62c649650617475c2d2e03e3}{Set\+Tile}} (int x, int y, int type)
+\item 
+int \mbox{\hyperlink{classTileMapComponent_adb24ff5494a792ccefb9b2cf95bc9f28}{Get\+Tile\+Type}} (int x, int y)
+\item 
+virtual void \mbox{\hyperlink{classTileMapComponent_ae047a76b8d2a3e052b97d2db6bbd9a87}{Render}} (SDL\+\_\+\+Renderer $\ast$ren) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classTileMapComponent}{Tile\+Map\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} for Mapping the Game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTileMapComponent_ac4691ecf844fa8fe077ab5a56663861d}\label{classTileMapComponent_ac4691ecf844fa8fe077ab5a56663861d}} 
+\index{TileMapComponent@{TileMapComponent}!TileMapComponent@{TileMapComponent}}
+\index{TileMapComponent@{TileMapComponent}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{TileMapComponent()}{TileMapComponent()}}
+{\footnotesize\ttfamily Tile\+Map\+Component\+::\+Tile\+Map\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor for a tilemap \mbox{\Hypertarget{classTileMapComponent_a3d8289074c6943aee6194df04a28cd5b}\label{classTileMapComponent_a3d8289074c6943aee6194df04a28cd5b}} 
+\index{TileMapComponent@{TileMapComponent}!````~TileMapComponent@{$\sim$TileMapComponent}}
+\index{````~TileMapComponent@{$\sim$TileMapComponent}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{$\sim$TileMapComponent()}{~TileMapComponent()}}
+{\footnotesize\ttfamily Tile\+Map\+Component\+::$\sim$\+Tile\+Map\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor for a tilemap 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTileMapComponent_abda1e3f6a76380b3628e69f33ad730bc}\label{classTileMapComponent_abda1e3f6a76380b3628e69f33ad730bc}} 
+\index{TileMapComponent@{TileMapComponent}!GenerateSimpleMap@{GenerateSimpleMap}}
+\index{GenerateSimpleMap@{GenerateSimpleMap}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{GenerateSimpleMap()}{GenerateSimpleMap()}}
+{\footnotesize\ttfamily void Tile\+Map\+Component\+::\+Generate\+Simple\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Temporary function for generating a simple map to display some tiles \mbox{\Hypertarget{classTileMapComponent_adb24ff5494a792ccefb9b2cf95bc9f28}\label{classTileMapComponent_adb24ff5494a792ccefb9b2cf95bc9f28}} 
+\index{TileMapComponent@{TileMapComponent}!GetTileType@{GetTileType}}
+\index{GetTileType@{GetTileType}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{GetTileType()}{GetTileType()}}
+{\footnotesize\ttfamily int Tile\+Map\+Component\+::\+Get\+Tile\+Type (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Return the tile type at an x and y position \mbox{\Hypertarget{classTileMapComponent_ad74bd890fb494d89958b4bc67686bdc6}\label{classTileMapComponent_ad74bd890fb494d89958b4bc67686bdc6}} 
+\index{TileMapComponent@{TileMapComponent}!PrintMap@{PrintMap}}
+\index{PrintMap@{PrintMap}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{PrintMap()}{PrintMap()}}
+{\footnotesize\ttfamily void Tile\+Map\+Component\+::\+Print\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function for printing text to console \mbox{\Hypertarget{classTileMapComponent_ae047a76b8d2a3e052b97d2db6bbd9a87}\label{classTileMapComponent_ae047a76b8d2a3e052b97d2db6bbd9a87}} 
+\index{TileMapComponent@{TileMapComponent}!Render@{Render}}
+\index{Render@{Render}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Tile\+Map\+Component\+::\+Render (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Draw all of the tiles in the tilemap 
+
+Reimplemented from \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Component}}.
+
+\mbox{\Hypertarget{classTileMapComponent_aa663981f62c649650617475c2d2e03e3}\label{classTileMapComponent_aa663981f62c649650617475c2d2e03e3}} 
+\index{TileMapComponent@{TileMapComponent}!SetTile@{SetTile}}
+\index{SetTile@{SetTile}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{SetTile()}{SetTile()}}
+{\footnotesize\ttfamily void Tile\+Map\+Component\+::\+Set\+Tile (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+Set the \textquotesingle{}type\textquotesingle{} of tile at an x and y position \mbox{\Hypertarget{classTileMapComponent_a05e27ac1fa482351130108259ea37942}\label{classTileMapComponent_a05e27ac1fa482351130108259ea37942}} 
+\index{TileMapComponent@{TileMapComponent}!ShutDown@{ShutDown}}
+\index{ShutDown@{ShutDown}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{ShutDown()}{ShutDown()}}
+{\footnotesize\ttfamily virtual void Tile\+Map\+Component\+::\+Shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destroy intialized data 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Component}}.
+
+\mbox{\Hypertarget{classTileMapComponent_ae1f83d88314f3d55d2a749d77db42d0c}\label{classTileMapComponent_ae1f83d88314f3d55d2a749d77db42d0c}} 
+\index{TileMapComponent@{TileMapComponent}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!TileMapComponent@{TileMapComponent}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTileMapComponent}{Tile\+Map\+Component}} $\ast$ Tile\+Map\+Component\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{std\+::string}]{tile\+Sheet\+File\+Path,  }\item[{int}]{rows,  }\item[{int}]{cols,  }\item[{int}]{\+\_\+\+Tile\+Width,  }\item[{int}]{\+\_\+\+Tile\+Height,  }\item[{int}]{\+\_\+mapX,  }\item[{int}]{\+\_\+mapY,  }\item[{SDL\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})}
+
+Actually initialize the data. Owner is the parent \mbox{\hyperlink{classGameObject}{Game\+Object}} tile\+Sheet\+File\+Path is the path to the tilemap image rows and cols are the number of different tiles in the spritesheet image \+\_\+\+Tile\+Width and \+\_\+\+Tile\+Height make up the size of one tile (works best square) \+\_\+mapX and \+\_\+mapY are the dimensions of the tilemap in game 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Tile\+Map\+Component.\+hpp\end{DoxyCompactItemize}

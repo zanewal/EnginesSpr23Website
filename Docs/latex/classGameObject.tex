@@ -1,0 +1,239 @@
+\hypertarget{classGameObject}{}\doxysection{Game\+Object Class Reference}
+\label{classGameObject}\index{GameObject@{GameObject}}
+
+
+{\ttfamily \#include $<$Game\+Object.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameObject_a0737657696b478c7962c2a6c2f5b1bd8}{Game\+Object}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Construct a simple game object with a name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject_a83dd64c73b91625e9137c8dd82531b86}{Game\+Object}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a Game Object from json, in otherwords the load function. \end{DoxyCompactList}\item 
+json \mbox{\hyperlink{classGameObject_a2834829a99a6875f0371458943ccc5a5}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn this object into a json object, useful for saving the gameobject \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}{$\sim$\+Game\+Object}} ()
+\item 
+void \mbox{\hyperlink{classGameObject_a49b2d3217a9ea81afa25e7d9a9ad2232}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em Start up the game object, including linking parent and starting up component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_ac1f32e116be7bff9d7933963b8856601}{Shutdown}} ()
+\begin{DoxyCompactList}\small\item\em Free any allocated resources. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_ad9e42b758c46cdd158be2bbb059bf04d}\label{classGameObject_ad9e42b758c46cdd158be2bbb059bf04d}} 
+void {\bfseries Process\+Input} (SDL\+\_\+\+Event $\ast$s)
+\begin{DoxyCompactList}\small\item\em Process an input. usually called from the scene A \mbox{\hyperlink{classGameObject}{Game\+Object}} sends the input to all of its Components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_afa1e9aefd8a3cf032ecc89ecb96cc8cb}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the scene usually called from the scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_a4018df48b4df0fc4b1db520fcad1ba6c}\label{classGameObject_a4018df48b4df0fc4b1db520fcad1ba6c}} 
+void {\bfseries Render} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em Per frame render. Renders everything usually called from the scene. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGameObject_a193b4d9c7eeea92c70b2cd4dc74e7342}{Add\+Component}} (\mbox{\hyperlink{classComponent}{Component}} $\ast$component)
+\begin{DoxyCompactList}\small\item\em Add a component to this \mbox{\hyperlink{classGameObject}{Game\+Object}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_a60581e860af5e423321f30da8d011413}\label{classGameObject_a60581e860af5e423321f30da8d011413}} 
+\mbox{\hyperlink{classComponent}{Component}} $\ast$ {\bfseries Get\+Component} (int index)
+\begin{DoxyCompactList}\small\item\em Get the component at the given index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_afd12a3bc0d445e45145f5e8f064da024}\label{classGameObject_afd12a3bc0d445e45145f5e8f064da024}} 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bfseries Get\+Component\+Of\+Type} ()
+\begin{DoxyCompactList}\small\item\em Gets the first \mbox{\hyperlink{classComponent}{Component}} of the given type. Or a nullptr, if no such \mbox{\hyperlink{classComponent}{Component}} exists. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_aa5f99076c586054cf4eb2b39bb1e2a6c}\label{classGameObject_aa5f99076c586054cf4eb2b39bb1e2a6c}} 
+void {\bfseries Remove\+Component} (int index)
+\begin{DoxyCompactList}\small\item\em Remove the component at the given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_a65b8a1dc71ad442e9b530014c1b72a55}{Remove\+All\+Components}} ()
+\begin{DoxyCompactList}\small\item\em Remove all component except sprite component. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_af12ae9074c969daf5ccb0d8baaea3793}\label{classGameObject_af12ae9074c969daf5ccb0d8baaea3793}} 
+void {\bfseries Set\+Parent} (\mbox{\hyperlink{classScene}{Scene}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the parent scene of this gameobject. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGameObject_afed61bbef4fedfcf20d874cd38c3a2f4}\label{classGameObject_afed61bbef4fedfcf20d874cd38c3a2f4}} 
+\mbox{\hyperlink{classScene}{Scene}} $\ast$ {\bfseries Get\+Parent} ()
+\begin{DoxyCompactList}\small\item\em Get the parent scene of this gameobject. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGameObject_a5cbd59eb3fd5c0a0600e1879d60236a4}{Set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGameObject_a74ce03d596c95cf6ebb8105c02260e7f}{Get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGameObject_a87a5f098b5d2b2b5d832305390b69b45}{Get\+Component\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Get the number of components this object hold. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classGameObject}{Game\+Object}} holds a vector of Components that define its behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameObject_a0737657696b478c7962c2a6c2f5b1bd8}\label{classGameObject_a0737657696b478c7962c2a6c2f5b1bd8}} 
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Construct a simple game object with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a83dd64c73b91625e9137c8dd82531b86}\label{classGameObject_a83dd64c73b91625e9137c8dd82531b86}} 
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\index{GameObject@{GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GameObject()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game\+Object\+::\+Game\+Object (\begin{DoxyParamCaption}\item[{json}]{j }\end{DoxyParamCaption})}
+
+
+
+Construct a Game Object from json, in otherwords the load function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}\label{classGameObject_ab82dfdb656f9051c0587e6593b2dda97}} 
+\index{GameObject@{GameObject}!````~GameObject@{$\sim$GameObject}}
+\index{````~GameObject@{$\sim$GameObject}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameObject()}{~GameObject()}}
+{\footnotesize\ttfamily Game\+Object\+::$\sim$\+Game\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameObject_a193b4d9c7eeea92c70b2cd4dc74e7342}\label{classGameObject_a193b4d9c7eeea92c70b2cd4dc74e7342}} 
+\index{GameObject@{GameObject}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily int Game\+Object\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComponent}{Component}} $\ast$}]{component }\end{DoxyParamCaption})}
+
+
+
+Add a component to this \mbox{\hyperlink{classGameObject}{Game\+Object}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & the component pointer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_a87a5f098b5d2b2b5d832305390b69b45}\label{classGameObject_a87a5f098b5d2b2b5d832305390b69b45}} 
+\index{GameObject@{GameObject}!GetComponentCount@{GetComponentCount}}
+\index{GetComponentCount@{GetComponentCount}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetComponentCount()}{GetComponentCount()}}
+{\footnotesize\ttfamily int Game\+Object\+::\+Get\+Component\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the number of components this object hold. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a74ce03d596c95cf6ebb8105c02260e7f}\label{classGameObject_a74ce03d596c95cf6ebb8105c02260e7f}} 
+\index{GameObject@{GameObject}!GetName@{GetName}}
+\index{GetName@{GetName}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily std\+::string Game\+Object\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the object. 
+
+\begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a65b8a1dc71ad442e9b530014c1b72a55}\label{classGameObject_a65b8a1dc71ad442e9b530014c1b72a55}} 
+\index{GameObject@{GameObject}!RemoveAllComponents@{RemoveAllComponents}}
+\index{RemoveAllComponents@{RemoveAllComponents}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{RemoveAllComponents()}{RemoveAllComponents()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Remove\+All\+Components (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all component except sprite component. 
+
+\mbox{\Hypertarget{classGameObject_a5cbd59eb3fd5c0a0600e1879d60236a4}\label{classGameObject_a5cbd59eb3fd5c0a0600e1879d60236a4}} 
+\index{GameObject@{GameObject}!SetName@{SetName}}
+\index{SetName@{SetName}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameObject_ac1f32e116be7bff9d7933963b8856601}\label{classGameObject_ac1f32e116be7bff9d7933963b8856601}} 
+\index{GameObject@{GameObject}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free any allocated resources. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a49b2d3217a9ea81afa25e7d9a9ad2232}\label{classGameObject_a49b2d3217a9ea81afa25e7d9a9ad2232}} 
+\index{GameObject@{GameObject}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})}
+
+
+
+Start up the game object, including linking parent and starting up component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em engine} & the engine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_a2834829a99a6875f0371458943ccc5a5}\label{classGameObject_a2834829a99a6875f0371458943ccc5a5}} 
+\index{GameObject@{GameObject}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Game\+Object\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+turn this object into a json object, useful for saving the gameobject 
+
+\begin{DoxyReturn}{Returns}
+a json 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameObject_afa1e9aefd8a3cf032ecc89ecb96cc8cb}\label{classGameObject_afa1e9aefd8a3cf032ecc89ecb96cc8cb}} 
+\index{GameObject@{GameObject}!Update@{Update}}
+\index{Update@{Update}!GameObject@{GameObject}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Object\+::\+Update (\begin{DoxyParamCaption}\item[{int}]{object,  }\item[{\mbox{\hyperlink{classScene}{Scene}} $\ast$}]{scene,  }\item[{int}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Update the scene usually called from the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & the object id in the scene \\
+\hline
+{\em scene} & \\
+\hline
+{\em delta\+Time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Game\+Object.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,210 @@
+\hypertarget{classSpriteComponent}{}\doxysection{Sprite\+Component Class Reference}
+\label{classSpriteComponent}\index{SpriteComponent@{SpriteComponent}}
+
+
+{\ttfamily \#include $<$Sprite\+Component.\+hpp$>$}
+
+Inheritance diagram for Sprite\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classSpriteComponent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpriteComponent_a961f54a1999fba83e21c123d37a0540e}{Sprite\+Component}} (std\+::string imagepath)
+\item 
+\mbox{\Hypertarget{classSpriteComponent_a3359c4bee5ab50bd55ffab98b19bda27}\label{classSpriteComponent_a3359c4bee5ab50bd55ffab98b19bda27}} 
+{\bfseries Sprite\+Component} (json j)
+\item 
+json \mbox{\hyperlink{classSpriteComponent_a32f99edd8338df22d40997d8b25060ce}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSpriteComponent_ae9faf31926d216faa3d981b5495a7bc3}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\item 
+virtual void \mbox{\hyperlink{classSpriteComponent_a83b2daa33fd66f04a8d73700b0266751}{Shut\+Down}} () override
+\item 
+virtual void \mbox{\hyperlink{classSpriteComponent_aa5ef07b5846194233068ac1c3cbddfec}{Render}} (SDL\+\_\+\+Renderer $\ast$ren) override
+\item 
+\mbox{\hyperlink{structVec2D}{Vec2D}} \mbox{\hyperlink{classSpriteComponent_afeb6a30921911e901c293474b18cdb5f}{Get\+Position}} ()
+\item 
+\mbox{\hyperlink{structMatrix3D}{Matrix3D}} \mbox{\hyperlink{classSpriteComponent_a275271237b47490f322254b9a3b8fcb6}{Get\+Rotation}} ()
+\item 
+\mbox{\hyperlink{structVec2D}{Vec2D}} \mbox{\hyperlink{classSpriteComponent_abf2b2b31a57e54e32a10b7fe72fa40da}{Get\+Scale}} ()
+\item 
+void \mbox{\hyperlink{classSpriteComponent_ada7a69b50c12f7255e6241158245508d}{Set\+Position}} (\mbox{\hyperlink{structVec2D}{Vec2D}} new\+Position)
+\item 
+void \mbox{\hyperlink{classSpriteComponent_a283c0fd1f6bb68b68f37debe6de61bdb}{Set\+Rotation}} (\mbox{\hyperlink{structMatrix3D}{Matrix3D}} new\+Rotation)
+\item 
+void \mbox{\hyperlink{classSpriteComponent_af0d9b894f728609bcc5abe4e2e5ce4b2}{Set\+Scale}} (\mbox{\hyperlink{structVec2D}{Vec2D}} new\+Scale)
+\item 
+float \mbox{\hyperlink{classSpriteComponent_a47b5cf52468e5b436282e5b8485d0cf7}{GetX}} ()
+\item 
+float \mbox{\hyperlink{classSpriteComponent_a03aea21043ee9652220803af0e3945c3}{GetY}} ()
+\item 
+float \mbox{\hyperlink{classSpriteComponent_ac454366af0baa55653e47ea190f227f9}{Get\+Width}} ()
+\item 
+float \mbox{\hyperlink{classSpriteComponent_a4f7df4aa18eb6060d1957e01e52fb047}{Get\+Height}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{classComponent_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+{\bfseries Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor the component with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classComponent_a4860ee9793851f3fa1e70249db0d61a1}{Component}} (json j)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classComponent}{Component}} from json. \end{DoxyCompactList}\item 
+virtual json \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{To\+Json}} ()
+\begin{DoxyCompactList}\small\item\em turn the component into a json \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classComponent_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Start\+Up}} (\mbox{\hyperlink{classEngine}{Engine}} $\ast$engine)
+\begin{DoxyCompactList}\small\item\em starting up the component, linking the dependency \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Shut\+Down}} ()
+\begin{DoxyCompactList}\small\item\em delete the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a76803ec8ad2db03ee9c24139cadf70ea}{Process\+Input}} (SDL\+\_\+\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em process the event comming from scene, optional \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_a642e2848c1750913afdb9d69e6289489}{Update}} (int object, \mbox{\hyperlink{classScene}{Scene}} $\ast$scene, int delta\+Time)
+\begin{DoxyCompactList}\small\item\em update the component \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Render}} (SDL\+\_\+\+Renderer $\ast$ren)
+\begin{DoxyCompactList}\small\item\em render the gameobject according to the component \end{DoxyCompactList}\item 
+virtual std\+::uintptr\+\_\+t \mbox{\hyperlink{classComponent_ace909638923b052060a4ef5d8a1b1c46}{Ptr}} ()
+\begin{DoxyCompactList}\small\item\em return a pointer int that may be useful in python \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponent_a897607c237122cc99121500391b946d4}{Set\+Parent}} (\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$new\+Parent)
+\begin{DoxyCompactList}\small\item\em Set the Parent of this object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ \mbox{\hyperlink{classComponent_ac1ac05d6e512931ff01a4aea88cc4e91}{Get\+Parent}} ()
+\begin{DoxyCompactList}\small\item\em Get the Parent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classComponent}{Component}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classComponent_a2b66804cabef14a2884c2d35f71a24ea}\label{classComponent_a2b66804cabef14a2884c2d35f71a24ea}} 
+\mbox{\hyperlink{classGameObject}{Game\+Object}} $\ast$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classSpriteComponent}{Sprite\+Component}} is a type of \mbox{\hyperlink{classComponent}{Component}} for rendering images. A \mbox{\hyperlink{classSpriteComponent}{Sprite\+Component}} has transform information for the sprite including position, rotation, and scale, 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpriteComponent_a961f54a1999fba83e21c123d37a0540e}\label{classSpriteComponent_a961f54a1999fba83e21c123d37a0540e}} 
+\index{SpriteComponent@{SpriteComponent}!SpriteComponent@{SpriteComponent}}
+\index{SpriteComponent@{SpriteComponent}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{SpriteComponent()}{SpriteComponent()}}
+{\footnotesize\ttfamily Sprite\+Component\+::\+Sprite\+Component (\begin{DoxyParamCaption}\item[{std\+::string}]{imagepath }\end{DoxyParamCaption})}
+
+Constuctor, must be constructed with imagepath 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpriteComponent_a4f7df4aa18eb6060d1957e01e52fb047}\label{classSpriteComponent_a4f7df4aa18eb6060d1957e01e52fb047}} 
+\index{SpriteComponent@{SpriteComponent}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily float Sprite\+Component\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the scaled height of the sprite \mbox{\Hypertarget{classSpriteComponent_afeb6a30921911e901c293474b18cdb5f}\label{classSpriteComponent_afeb6a30921911e901c293474b18cdb5f}} 
+\index{SpriteComponent@{SpriteComponent}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVec2D}{Vec2D}} Sprite\+Component\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the position of the sprite \mbox{\Hypertarget{classSpriteComponent_a275271237b47490f322254b9a3b8fcb6}\label{classSpriteComponent_a275271237b47490f322254b9a3b8fcb6}} 
+\index{SpriteComponent@{SpriteComponent}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMatrix3D}{Matrix3D}} Sprite\+Component\+::\+Get\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the rotation of the sprite (currently unused) \mbox{\Hypertarget{classSpriteComponent_abf2b2b31a57e54e32a10b7fe72fa40da}\label{classSpriteComponent_abf2b2b31a57e54e32a10b7fe72fa40da}} 
+\index{SpriteComponent@{SpriteComponent}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVec2D}{Vec2D}} Sprite\+Component\+::\+Get\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get the scale of the sprite \mbox{\Hypertarget{classSpriteComponent_ac454366af0baa55653e47ea190f227f9}\label{classSpriteComponent_ac454366af0baa55653e47ea190f227f9}} 
+\index{SpriteComponent@{SpriteComponent}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily float Sprite\+Component\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the scaled width of the sprite \mbox{\Hypertarget{classSpriteComponent_a47b5cf52468e5b436282e5b8485d0cf7}\label{classSpriteComponent_a47b5cf52468e5b436282e5b8485d0cf7}} 
+\index{SpriteComponent@{SpriteComponent}!GetX@{GetX}}
+\index{GetX@{GetX}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetX()}{GetX()}}
+{\footnotesize\ttfamily float Sprite\+Component\+::\+GetX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the top-\/left X position of the sprite \mbox{\Hypertarget{classSpriteComponent_a03aea21043ee9652220803af0e3945c3}\label{classSpriteComponent_a03aea21043ee9652220803af0e3945c3}} 
+\index{SpriteComponent@{SpriteComponent}!GetY@{GetY}}
+\index{GetY@{GetY}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{GetY()}{GetY()}}
+{\footnotesize\ttfamily float Sprite\+Component\+::\+GetY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Gets the top-\/left Y position of the sprite \mbox{\Hypertarget{classSpriteComponent_aa5ef07b5846194233068ac1c3cbddfec}\label{classSpriteComponent_aa5ef07b5846194233068ac1c3cbddfec}} 
+\index{SpriteComponent@{SpriteComponent}!Render@{Render}}
+\index{Render@{Render}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily virtual void Sprite\+Component\+::\+Render (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{ren }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Render the sprite to the screen at the stored position and with the given scale. 
+
+Reimplemented from \mbox{\hyperlink{classComponent_aee50e71c3b2d02fcbf50d7d8d9b6925c}{Component}}.
+
+\mbox{\Hypertarget{classSpriteComponent_ada7a69b50c12f7255e6241158245508d}\label{classSpriteComponent_ada7a69b50c12f7255e6241158245508d}} 
+\index{SpriteComponent@{SpriteComponent}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void Sprite\+Component\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{new\+Position }\end{DoxyParamCaption})}
+
+Set a new position for the sprite \mbox{\Hypertarget{classSpriteComponent_a283c0fd1f6bb68b68f37debe6de61bdb}\label{classSpriteComponent_a283c0fd1f6bb68b68f37debe6de61bdb}} 
+\index{SpriteComponent@{SpriteComponent}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}}
+{\footnotesize\ttfamily void Sprite\+Component\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMatrix3D}{Matrix3D}}}]{new\+Rotation }\end{DoxyParamCaption})}
+
+Set a new rotation for the sprite (currently unused) \mbox{\Hypertarget{classSpriteComponent_af0d9b894f728609bcc5abe4e2e5ce4b2}\label{classSpriteComponent_af0d9b894f728609bcc5abe4e2e5ce4b2}} 
+\index{SpriteComponent@{SpriteComponent}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void Sprite\+Component\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVec2D}{Vec2D}}}]{new\+Scale }\end{DoxyParamCaption})}
+
+Set the scale for the sprite \mbox{\Hypertarget{classSpriteComponent_a83b2daa33fd66f04a8d73700b0266751}\label{classSpriteComponent_a83b2daa33fd66f04a8d73700b0266751}} 
+\index{SpriteComponent@{SpriteComponent}!ShutDown@{ShutDown}}
+\index{ShutDown@{ShutDown}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{ShutDown()}{ShutDown()}}
+{\footnotesize\ttfamily virtual void Sprite\+Component\+::\+Shut\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Deallocate resources 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a7081fe7b65f74447ebd065a7164c4b63}{Component}}.
+
+\mbox{\Hypertarget{classSpriteComponent_ae9faf31926d216faa3d981b5495a7bc3}\label{classSpriteComponent_ae9faf31926d216faa3d981b5495a7bc3}} 
+\index{SpriteComponent@{SpriteComponent}!StartUp@{StartUp}}
+\index{StartUp@{StartUp}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{StartUp()}{StartUp()}}
+{\footnotesize\ttfamily virtual void Sprite\+Component\+::\+Start\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEngine}{Engine}} $\ast$}]{engine }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Allocate resources 
+
+Reimplemented from \mbox{\hyperlink{classComponent_a8edf17be0f452fe5a6182bd68ed8f4e8}{Component}}.
+
+\mbox{\Hypertarget{classSpriteComponent_a32f99edd8338df22d40997d8b25060ce}\label{classSpriteComponent_a32f99edd8338df22d40997d8b25060ce}} 
+\index{SpriteComponent@{SpriteComponent}!ToJson@{ToJson}}
+\index{ToJson@{ToJson}!SpriteComponent@{SpriteComponent}}
+\doxysubsubsection{\texorpdfstring{ToJson()}{ToJson()}}
+{\footnotesize\ttfamily json Sprite\+Component\+::\+To\+Json (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+turn the component into a json 
+
+\begin{DoxyReturn}{Returns}
+json 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classComponent_a91e5701d6efaa00a1b158afb5deb7f02}{Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Components/Sprite\+Component.\+hpp\end{DoxyCompactItemize}
